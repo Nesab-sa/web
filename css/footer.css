@@ -1,0 +1,386 @@
+.nesab-privacy-visual {
+  position: relative;
+  min-height: 460px;
+}
+
+.nesab-privacy-figure {
+  width: 100%;
+  max-width: 340px;
+  margin-right: 0;
+  margin-left: auto;
+  overflow: hidden;
+  border-radius: 34px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-lg);
+}
+
+.nesab-privacy-figure img {
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+@supports (aspect-ratio: 1 / 1) {
+  .nesab-privacy-figure img {
+    aspect-ratio: 0.51 / 1;
+  }
+}
+
+.nesab-privacy-note {
+  position: absolute;
+  bottom: 8%;
+  left: 0;
+  right: auto;
+  top: auto;
+  width: 320px;
+  max-width: 72%;
+  padding: 18px 20px;
+  border-radius: 24px;
+  border: 1px solid var(--line);
+  background: var(--panel-strong);
+  box-shadow: var(--shadow-lg);
+}
+
+.nesab-privacy-note strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.nesab-privacy-note p {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+.nesab-feature-video {
+  width: 100%;
+  margin-top: var(--section-gap);
+  padding: 36px 0;
+  background: var(--video-bg);
+}
+
+@supports (padding: clamp(1px, 2vw, 3px)) {
+  .nesab-feature-video {
+    padding: clamp(28px, 4vw, 44px) 0 36px;
+  }
+}
+
+.nesab-feature-video-shell {
+  margin-bottom: 22px;
+}
+
+.nesab-feature-video-copy {
+  max-width: 760px;
+}
+
+.nesab-feature-video-frame {
+  width: 100%;
+}
+
+.nesab-feature-video-media {
+  width: 94vw;
+  max-width: 1380px;
+  margin: 0 auto;
+  height: auto;
+  border-radius: 30px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-lg);
+  background: #000;
+}
+
+.nesab-footer {
+  background:
+    -webkit-linear-gradient(top, var(--bg-soft), var(--bg)),
+    radial-gradient(circle at top right, rgba(56, 189, 248, 0.08), transparent 34%);
+  background:
+    linear-gradient(180deg, var(--bg-soft), var(--bg)),
+    radial-gradient(circle at top right, rgba(56, 189, 248, 0.08), transparent 34%);
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.nesab-footer-inner {
+  padding-top: 48px;
+  padding-bottom: 26px;
+}
+
+@supports (padding: clamp(1px, 2vw, 3px)) {
+  .nesab-footer-inner {
+    padding-top: clamp(38px, 5vw, 58px);
+  }
+}
+
+.nesab-footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.8fr 1.1fr;
+  gap: 28px;
+  -webkit-align-items: start;
+  align-items: start;
+}
+
+.nesab-brand--footer {
+  margin-bottom: 14px;
+}
+
+.nesab-footer-col {
+  display: grid;
+  gap: 8px;
+}
+
+.nesab-footer-heading {
+  margin: 0 0 6px;
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.nesab-footer-link {
+  color: var(--muted);
+  text-decoration: none;
+  -webkit-transition: color 0.22s ease;
+  transition: color 0.22s ease;
+}
+
+.nesab-footer-link:hover {
+  color: var(--accent-sky);
+}
+
+.nesab-footer-copy {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+.nesab-store-actions--footer {
+  grid-template-columns: 1fr;
+  max-width: 260px;
+  margin-top: 14px;
+}
+
+.nesab-store-link--footer .nesab-store-art {
+  width: 100px;
+}
+
+/* ===== Social icons — cross-browser bulletproof ===== */
+.ftr-icons {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+/* Margin-based spacing — works everywhere (no gap dependency) */
+.ftr-icons .ftr-icon {
+  margin-top: 6px;
+  margin-bottom: 6px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+/* LTR override — same symmetric value, no change needed */
+
+.ftr-icon {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  min-height: 38px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  border-radius: 50%;
+  text-decoration: none;
+  vertical-align: middle;
+  -webkit-transition: -webkit-transform 0.22s ease, opacity 0.22s ease;
+  -o-transition: transform 0.22s ease, opacity 0.22s ease;
+  transition: transform 0.22s ease, opacity 0.22s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ftr-icon:hover {
+  -webkit-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  transform: translateY(-2px);
+  opacity: 0.85;
+  text-decoration: none;
+}
+
+.ftr-icon svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+.ftr-icon--wa {
+  background-color: #25d366;
+  background: #25d366;
+}
+
+.ftr-icon--x {
+  background-color: #000000;
+  background: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ftr-icon--x svg {
+  width: 16px;
+  height: 16px;
+}
+
+.ftr-icon--tg {
+  background-color: #0088cc;
+  background: #0088cc;
+}
+
+.ftr-icon--li {
+  background-color: #0a66c2;
+  background: #0a66c2;
+}
+
+.ftr-icon--mail {
+  background-color: var(--accent-sky);
+  background: var(--accent-sky);
+}
+
+/* ===== Developer card — premium boxed panel ===== */
+.ftr-dev-card {
+  position: relative;
+  padding: 26px 22px 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line-strong);
+  background: var(--panel);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  backdrop-filter: blur(14px) saturate(1.2);
+  box-shadow:
+    0 2px 12px rgba(0, 0, 0, 0.05),
+    0 10px 44px var(--glow-sky);
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 14px;
+  height: 100%;
+  -webkit-transition: box-shadow 0.28s ease, -webkit-transform 0.28s ease;
+  -o-transition: box-shadow 0.28s ease, transform 0.28s ease;
+  transition: box-shadow 0.28s ease, transform 0.28s ease;
+}
+
+/* Top accent glow bar */
+.ftr-dev-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 2px;
+  background: -webkit-linear-gradient(right, transparent, var(--accent-sky) 50%, transparent);
+  background: linear-gradient(to left, transparent, var(--accent-sky) 50%, transparent);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.ftr-dev-card:hover {
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.09),
+    0 18px 60px var(--glow-sky);
+  -webkit-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
+  transform: translateY(-3px);
+}
+
+.ftr-dev-card-title {
+  margin: 0;
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line-strong);
+}
+
+.ftr-dev-card-bio {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.855rem;
+  font-weight: 400;
+  line-height: 2.25;
+  letter-spacing: 0.01em;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.ftr-dev-links {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  margin-top: auto;
+}
+
+.ftr-dev-links .ftr-icon {
+  margin: 4px 8px;
+}
+
+.nesab-footer-bottom {
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  text-align: center;
+  color: var(--muted-soft);
+  font-size: 0.84rem;
+}

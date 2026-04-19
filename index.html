@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="نقدم لكم NESAB حليفك الذكي لخدمة عملائك. نِسب شريكك في الميدان ليمنحك السرعة والدقة في ثوانٍ معدودة.">
+  <title>Download the App حمل التطبيق الان</title>
+  <script>
+    (function () {
+      var storageKey = "nesab_theme_mode";
+      var storedTheme = null;
+
+      try {
+        storedTheme = window.localStorage.getItem(storageKey);
+      } catch (error) {
+        storedTheme = null;
+      }
+
+      var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      if (storedTheme !== "dark" && storedTheme !== "light") {
+        storedTheme = null;
+      }
+
+      var theme = storedTheme || (prefersDark ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+      document.documentElement.classList.toggle("dark", theme === "dark");
+
+      var themeColorMeta = document.querySelector('meta[name="theme-color"]');
+      if (themeColorMeta) {
+        themeColorMeta.setAttribute("content", theme === "dark" ? "#000000" : "#ffffff");
+      }
+
+      window.__nesabInitialLogo = theme === "dark" ? "assets/header_logo_dark.png" : "assets/header_logo_light.png";
+      document.addEventListener("DOMContentLoaded", function () {
+        var navLogo = document.getElementById("nav-brand-logo");
+        var footerLogo = document.getElementById("footer-brand-logo");
+        if (navLogo) navLogo.src = window.__nesabInitialLogo;
+        if (footerLogo) footerLogo.src = window.__nesabInitialLogo;
+      });
+    })();
+  </script>
+  <link rel="icon" href="assets/applogo_light.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="assets/applogo_light.png">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="nesab-page">
+  <nav class="nesab-nav" aria-label="التنقل الرئيسي">
+    <div class="layout-shell nesab-nav-inner">
+      <a class="nesab-brand" href="#home">
+        <img id="nav-brand-logo" class="nesab-brand-logo" src="assets/header_logo_light.png" alt="NESAB" width="140" height="46" style="height:46px;width:auto;max-height:46px;max-width:160px;display:block;">
+      </a>
+
+      <div id="site-nav" class="nesab-nav-links">
+        <a class="nesab-link" href="#home">الرئيسية</a>
+        <a class="nesab-link" href="#about">عن التطبيق</a>
+        <a class="nesab-link" href="#features">المميزات</a>
+        <a class="nesab-link" href="#reviews">آراء المستخدمين</a>
+        <a class="nesab-link" href="#vision">رؤية نِسب</a>
+        <a class="nesab-link" href="#fees">الرسوم البنكية</a>
+        <a class="nesab-link" href="#tools">الأدوات السريعة</a>
+      </div>
+
+      <button class="nesab-theme-toggle" type="button" aria-pressed="false" aria-label="تبديل المظهر">
+        <svg class="nesab-theme-icon nesab-theme-icon--sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="currentColor" d="M12 18a6 6 0 1 0 0-12a6 6 0 0 0 0 12Zm0 2.5a.75.75 0 0 1 .75.75V22a.75.75 0 0 1-1.5 0v-.75a.75.75 0 0 1 .75-.75Zm0-17a.75.75 0 0 1-.75-.75V2a.75.75 0 0 1 1.5 0v.75a.75.75 0 0 1-.75.75Zm8.5 7.75a.75.75 0 0 1 0 1.5h-.75a.75.75 0 0 1 0-1.5h.75Zm-16.25 0a.75.75 0 0 1 0 1.5H3.5a.75.75 0 0 1 0-1.5h.75Zm13.2-5.7a.75.75 0 0 1 1.06 1.06l-.53.53a.75.75 0 0 1-1.06-1.06l.53-.53Zm-11.62 11.62a.75.75 0 0 1 1.06 1.06l-.53.53a.75.75 0 0 1-1.06-1.06l.53-.53Zm11.09 1.59a.75.75 0 0 1 1.06-1.06l.53.53a.75.75 0 0 1-1.06 1.06l-.53-.53Zm-11.62-11.62a.75.75 0 0 1 1.06-1.06l.53.53a.75.75 0 1 1-1.06 1.06l-.53-.53Z"/>
+        </svg>
+        <svg class="nesab-theme-icon nesab-theme-icon--moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="currentColor" d="M14.6 2.45a.75.75 0 0 1 .86.95a8.25 8.25 0 1 0 10.14 10.14a.75.75 0 0 1 .95.86A9.75 9.75 0 1 1 14.6 2.45Z" transform="translate(-4 -2)"/>
+        </svg>
+      </button>
+
+      <button class="nesab-nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="فتح القائمة">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="nesab-main">
+    <section id="home" class="nesab-hero">
+      <div class="layout-shell nesab-hero-grid">
+        <div class="nesab-hero-copy anim anim-up">
+          <p class="nesab-eyebrow">Download the App حمل التطبيق الان</p>
+          <h1 class="nesab-hero-title">نقدم لكم <span style="color:#fff">NESAB</span> حليفك الذكي لخدمة عملائك</h1>
+          <p class="nesab-hero-lead">
+            "نِسب" ليس مجرد تطبيق حسابي، بل هو شريكك في الميدان. صُمم بذكاء ليمنحك الدقة المتناهية في ثوانٍ معدودة،
+            مما يتيح لك خدمة عملائك بلمسة احترافية وثقة كاملة، وفي كل الأوقات. تميز عن غيرك بامتلاك الأداة الأسرع. مع
+            "نِسب"، نختصر عليك التعقيد ونمنحك السهولة في الوصول للنتائج الدقيقة، لتتفرغ لما هو أهم: بناء علاقة متينة مع
+            عملائك وتقديم خدمة تليق بهم.
+          </p>
+          <div class="nesab-hero-actions">
+            <a class="nesab-button nesab-button--primary" href="#about">أفضل مميزات التطبيق</a>
+            <a class="nesab-button nesab-button--secondary" href="#reviews">آراء المستخدمين</a>
+          </div>
+          <div class="nesab-store-actions anim anim-up anim-d1" aria-label="روابط تحميل التطبيق">
+            <a class="nesab-store-link" href="https://play.google.com/store/search?q=NESAB&amp;c=apps" target="_blank" rel="noopener noreferrer">
+              <img class="nesab-store-art" src="assets/store-google.png" alt="Google Play">
+            </a>
+            <a class="nesab-store-link" href="https://apps.apple.com/sa/search?term=NESAB" target="_blank" rel="noopener noreferrer">
+              <img class="nesab-store-art" src="assets/store-apple.png" alt="App Store">
+            </a>
+          </div>
+        
+        </div>
+
+        <div class="nesab-hero-visual anim anim-left anim-d3">
+       
+          <div class="nesab-phone-stack">
+            <figure class="nesab-phone-card--primary">
+              <img src="assets/landing-hero-phone.jpg" alt="واجهة التطبيق الرئيسية" loading="eager">
+            </figure>
+            
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="nesab-panel">
+      <div class="layout-shell nesab-split">
+        <div class="nesab-copy anim anim-up">
+          <p class="nesab-kicker">أفضل مميزات التطبيق</p>
+          <h2 class="nesab-heading">واجهة ذكية، نتائج فورية، ودقة حسابية</h2>
+          <p class="nesab-copy-lead">
+            صُمم التطبيق خصيصاً ليناسب طبيعة عملك السريعة والميدانية في البنك، ويمنحك سهولة الوصول إلى النتائج الدقيقة
+            في ثوانٍ.
+          </p>
+          <div class="nesab-feature-points">
+            <article class="nesab-point-card anim anim-up anim-d1">
+              <strong>واجهة ذكية</strong>
+              <p>تصميم بسيط وسهل صُمم خصيصاً ليناسب طبيعة عملك السريعة والميدانية في البنك.</p>
+            </article>
+            <article class="nesab-point-card anim anim-up anim-d2">
+              <strong>نتائج فورية</strong>
+              <p>اختصر وقتك وجهدك واحصل على النتائج في ثوانٍ، لتركز أكثر على احتياجات عميلك.</p>
+            </article>
+            <article class="nesab-point-card anim anim-up anim-d3">
+              <strong>الدقة الحسابية</strong>
+              <p>حسابات بنكية دقيقة تضمن لك ولعميلك الموثوقية التامة وتتجنب الأخطاء البشرية.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="nesab-showcase anim anim-right anim-d2">
+          <!-- <figure class="nesab-showcase-main">
+            <img src="assets/feature-art.png" alt="عنصر بصري يبرز هوية التطبيق" loading="lazy">
+          </figure> -->
+          <figure class="nesab-showcase-phone">
+            <img src="assets/feature-phone.jpg" alt="شاشة من التطبيق" loading="lazy">
+          </figure>
+          <figure class="nesab-showcase-phone nesab-showcase-phone--secondary">
+            <img src="assets/feature-phone-2.jpg" alt="شاشة إضافية من التطبيق" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="nesab-panel nesab-panel--compact">
+      <div class="layout-shell">
+        <div class="nesab-panel-head">
+          <p class="nesab-kicker">أفضل مميزات التطبيق</p>
+          <h2 class="nesab-heading">الأداة الأفضل لكل موظف بنك يبحث عن الاحترافية والتميز في خدمة العملاء</h2>
+          <p class="nesab-panel-subtitle">السرعة والدقة في تطبيق واحد.</p>
+        </div>
+
+        <div class="nesab-feature-grid">
+          <article class="nesab-feature-card anim anim-up">
+            <span class="nesab-feature-icon">01</span>
+            <h3>واجهة ذكية</h3>
+            <p>تصميم بسيط وسهل صُمم خصيصاً ليناسب طبيعة عملك السريعة والميدانية في البنك.</p>
+          </article>
+          <article class="nesab-feature-card anim anim-up anim-d1">
+            <span class="nesab-feature-icon">02</span>
+            <h3>نتائج فورية</h3>
+            <p>اختصر وقتك وجهدك واحصل على النتائج في ثوانٍ، لتركز أكثر على احتياجات عميلك.</p>
+          </article>
+          <article class="nesab-feature-card anim anim-up anim-d2">
+            <span class="nesab-feature-icon">03</span>
+            <h3>الدقة الحسابية</h3>
+            <p>حسابات بنكية دقيقة تضمن لك ولعميلك الموثوقية التامة وتتجنب الأخطاء البشرية.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews" class="nesab-panel">
+      <div class="layout-shell">
+        <div class="nesab-panel-head">
+          <p class="nesab-kicker">آراء المستخدمين</p>
+          <h2 class="nesab-heading">آراء المستخدمين</h2>
+        </div>
+
+        <div class="nesab-review-grid">
+          <article class="nesab-review-card anim anim-up">
+            <img class="nesab-review-icon" src="assets/review-star.svg" alt="" aria-hidden="true" loading="lazy">
+            <p>"تطبيق نِسب غيّر طريقتي في التعامل مع العميل، صرت أقدر أعطي أرقام دقيقة في ثوانٍ وسط الفرع بدون ما أحتاج أرجع للمكتب وخارج اوقات العمل"</p>
+            <strong>موظف مبيعات</strong>
+          </article>
+          <article class="nesab-review-card anim anim-up anim-d1">
+            <img class="nesab-review-icon" src="assets/review-star.svg" alt="" aria-hidden="true" loading="lazy">
+            <p>"الأداة الأفضل لكل موظف بنك يبحث عن الاحترافية والتميز في خدمة العملاء. السرعة والدقة في تطبيق واحد"</p>
+            <strong>مدير علاقة</strong>
+          </article>
+          <article class="nesab-review-card anim anim-up anim-d2">
+            <img class="nesab-review-icon" src="assets/review-star.svg" alt="" aria-hidden="true" loading="lazy">
+            <p>"وفر عليّ الكثير من الوقت في حساب النسب والاستقطاعات المعقدة. تطبيق بسيط وعملي جداً."</p>
+            <strong>مستشار تمويل / عقاري</strong>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="vision" class="nesab-panel nesab-panel--compact">
+      <div class="layout-shell nesab-vision-grid">
+        <figure class="nesab-vision-figure anim anim-right anim-d1">
+          <img src="assets/vision-photo.jpg" alt="عنصر بصري يعبر عن رؤية نِسب للحلول التقنية" loading="lazy">
+        </figure>
+
+        <div class="nesab-copy anim anim-up">
+          <p class="nesab-kicker">رؤية نِسب</p>
+          <h2 class="nesab-heading">رؤية نِسب للحلول التقنية</h2>
+          <p class="nesab-copy-lead">
+            ولدت فكرة "نِسب" من قلب الميدان المصرفي، لنكون الذراع التقني الذي يسند الموظف في أدق تفاصيل عمله. نحن لا
+            نقدم مجرد أرقام، بل نقدم السرعة التي تمنحك التميز، والدقة التي تمنحك الثقة أمام عميلك. هدفنا هو تحويل
+            العمليات الحسابية المعقدة إلى لمسة واحدة بسيطة، لنتيح لك التركيز على بناء علاقات مستدامة مع عملائك.
+          </p>
+        </div>
+
+        <div class="nesab-vision-cards">
+          <article class="nesab-vision-card anim anim-up">
+            <strong>السرعة التي تمنحك التميز</strong>
+            <p>نحوّل العمليات الحسابية المعقدة إلى لمسة واحدة بسيطة تدعم أداءك داخل الميدان.</p>
+          </article>
+          <article class="nesab-vision-card anim anim-up anim-d1">
+            <strong>الدقة التي تمنحك الثقة</strong>
+            <p>نسند الموظف في أدق تفاصيل عمله ليقدم أرقاماً موثوقة أمام العميل بثبات واحترافية.</p>
+          </article>
+          <article class="nesab-vision-card anim anim-up anim-d2">
+            <strong>علاقات مستدامة مع العملاء</strong>
+            <p>نمنحك مساحة أكبر للتركيز على الخدمة وبناء علاقة متينة ومستدامة مع عملائك.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="nesab-panel nesab-panel--compact">
+      <section id="fees" class="nesab-section">
+        <div class="nesab-section-header">
+          <h2 class="nesab-section-title anim anim-up"><span style="color:#fff">الرسوم</span> البنكية</h2>
+          <p class="nesab-section-subtitle anim anim-up anim-d1">التعرفة البنكية للخدمات البنكية الأساسية للأفراد</p>
+        </div>
+
+        <div class="nesab-tab-row anim anim-up anim-d1">
+          <button type="button" class="nesab-tab fee-tab-btn active" data-tab="tab-basic">الخدمات الأساسية</button>
+          <button type="button" class="nesab-tab fee-tab-btn btn-ghost" data-tab="tab-transfers">الحوالات والتحويلات</button>
+          <button type="button" class="nesab-tab fee-tab-btn btn-ghost" data-tab="tab-comparison">مقارنة الرسوم المحدثة</button>
+        </div>
+
+        <div id="tab-basic" class="fee-tab-panel anim anim-up anim-d2">
+          <div class="nesab-table-shell">
+            <table class="fees-table">
+              <thead>
+                <tr>
+                  <th>الخدمة</th>
+                  <th>الوصف</th>
+                  <th>إلكترونياً</th>
+                  <th>الفرع</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="4" class="category-header">الحسابات البنكية</td>
+                </tr>
+                <tr>
+                  <td>فتح حساب جاري أساسي</td>
+                  <td>الحساب الجاري الأول للعميل</td>
+                  <td>مجاناً</td>
+                  <td>مجاناً</td>
+                </tr>
+                <tr>
+                  <td>انخفاض الرصيد</td>
+                  <td>عن الحد المطلوب</td>
+                  <td>لا يوجد</td>
+                  <td>لا يوجد</td>
+                </tr>
+
+                <tr>
+                  <td colspan="4" class="category-header">كشف الحساب</td>
+                </tr>
+                <tr>
+                  <td>كشف حساب أقل من سنة</td>
+                  <td>-</td>
+                  <td>مجاناً</td>
+                  <td>25 ريال</td>
+                </tr>
+                <tr>
+                  <td>كشف حساب من سنة إلى خمس سنوات</td>
+                  <td>-</td>
+                  <td>مجاناً</td>
+                  <td>30 ريال</td>
+                </tr>
+                <tr>
+                  <td>كشف حساب أكثر من خمس سنوات</td>
+                  <td>-</td>
+                  <td>مجاناً</td>
+                  <td>50 ريال</td>
+                </tr>
+                <tr>
+                  <td>كشف حساب مختصر</td>
+                  <td>-</td>
+                  <td>مجاناً</td>
+                  <td>مجاناً</td>
+                </tr>
+
+                <tr>
+                  <td colspan="4" class="category-header">السحب النقدي والإيداعات</td>
+                </tr>
+                <tr>
+                  <td>السحب النقدي</td>
+                  <td>-</td>
+                  <td>مجاناً</td>
+                  <td>مجاناً</td>
+                </tr>
+                <tr>
+                  <td>إيداع نقدي</td>
+                  <td>-</td>
+                  <td>مجاناً</td>
+                  <td>مجاناً</td>
+                </tr>
+                <tr>
+                  <td>إيداع شيك</td>
+                  <td>-</td>
+                  <td>مجاناً</td>
+                  <td>مجاناً</td>
+                </tr>
+
+                <tr>
+                  <td colspan="4" class="category-header">بطاقات مدى</td>
+                </tr>
+                <tr>
+                  <td>إصدار بطاقة مدى لكل حساب</td>
+                  <td>-</td>
+                  <td>مجاناً</td>
+                  <td>مجاناً</td>
+                </tr>
+                <tr>
+                  <td>تجديد بطاقة مدى</td>
+                  <td>-</td>
+                  <td>مجاناً</td>
+                  <td>مجاناً</td>
+                </tr>
+                <tr>
+                  <td>إعادة إصدار بطاقة مدى</td>
+                  <td>سحبت من جهاز الصراف الآلي</td>
+                  <td>مجاناً</td>
+                  <td>مجاناً</td>
+                </tr>
+                <tr>
+                  <td>إعادة إصدار بطاقة مدى</td>
+                  <td>مفقودة/تالفة/خطأ في الرقم السري 3 مرات</td>
+                  <td>30 ريال</td>
+                  <td>30 ريال</td>
+                </tr>
+                <tr>
+                  <td>استخدام بطاقة مدى على نقاط البيع</td>
+                  <td>-</td>
+                  <td>مجاناً</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>استخدام بطاقة مدى للشراء عبر الإنترنت</td>
+                  <td>-</td>
+                  <td>مجاناً</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>رسوم الاعتراض الخاطئ على عمليات الشراء</td>
+                  <td>-</td>
+                  <td>50 ريال</td>
+                  <td>50 ريال</td>
+                </tr>
+                <tr>
+                  <td>السحب النقدي ببطاقات مدى دولياً</td>
+                  <td>-</td>
+                  <td>25 ريال</td>
+                  <td>25 ريال</td>
+                </tr>
+
+                <tr>
+                  <td colspan="4" class="category-header">خدمات الدفع عبر نظام سداد</td>
+                </tr>
+                <tr>
+                  <td>سداد رسوم وفواتير الخدمات الحكومية</td>
+                  <td>-</td>
+                  <td>مجاناً</td>
+                  <td>مجاناً</td>
+                </tr>
+                <tr>
+                  <td>سداد الفواتير ورسوم الخدمات</td>
+                  <td>-</td>
+                  <td>مجاناً</td>
+                  <td>مجاناً</td>
+                </tr>
+                <tr>
+                  <td>حساب سداد للدفع الإلكتروني</td>
+                  <td>-</td>
+                  <td>مجاناً</td>
+                  <td>مجاناً</td>
+                </tr>
+
+                <tr>
+                  <td colspan="4" class="category-header">الشيكات</td>
+                </tr>
+                <tr>
+                  <td>إصدار دفتر شيكات (25 شيك)</td>
+                  <td>-</td>
+                  <td>10 ريال</td>
+                  <td>10 ريال</td>
+                </tr>
+                <tr>
+                  <td>إصدار شيك مصرفي</td>
+                  <td>-</td>
+                  <td>10 ريال</td>
+                  <td>10 ريال</td>
+                </tr>
+                <tr>
+                  <td>إلغاء شيك مصرفي</td>
+                  <td>-</td>
+                  <td>10 ريال</td>
+                  <td>10 ريال</td>
+                </tr>
+                <tr>
+                  <td>إصدار شيك مصرفي (عملة أجنبية)</td>
+                  <td>-</td>
+                  <td>15 ريال</td>
+                  <td>15 ريال</td>
+                </tr>
+                <tr>
+                  <td>إلغاء شيك مصرفي (عملة أجنبية)</td>
+                  <td>-</td>
+                  <td>15 ريال</td>
+                  <td>15 ريال</td>
+                </tr>
+                <tr>
+                  <td>طلب نسخة شيك تاريخ صرفه إلى سنة</td>
+                  <td>-</td>
+                  <td>10 ريال</td>
+                  <td>10 ريال</td>
+                </tr>
+                <tr>
+                  <td>طلب نسخة شيك تاريخ صرفه أكثر من سنة</td>
+                  <td>-</td>
+                  <td>20 ريال</td>
+                  <td>20 ريال</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="tab-transfers" class="fee-tab-panel hidden anim anim-up anim-d2">
+          <div class="nesab-table-shell">
+            <table class="fees-table">
+              <thead>
+                <tr>
+                  <th>الخدمة</th>
+                  <th>إلكترونياً</th>
+                  <th>الفرع</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="3" class="category-header">الحوالات</td>
+                </tr>
+                <tr>
+                  <td>تعريف مستفيد للتحويل إليه</td>
+                  <td>مجاناً</td>
+                  <td>مجاناً</td>
+                </tr>
+                <tr>
+                  <td>التحويل من حساب لآخر داخل البنك</td>
+                  <td>مجاناً</td>
+                  <td>مجاناً</td>
+                </tr>
+                <tr>
+                  <td>التحويل من بنك لآخر داخل المملكة عبر نظام سريع الفوري (للعمليات ≤ 500 ريال)</td>
+                  <td>بحد أقصى 0.5 ريال</td>
+                  <td>بحد أقصى 0.5 ريال</td>
+                </tr>
+                <tr>
+                  <td>التحويل من بنك لآخر داخل المملكة عبر نظام سريع الفوري (للعمليات &gt; 500 ريال)</td>
+                  <td>بحد أقصى 1 ريال</td>
+                  <td>بحد أقصى 1 ريال</td>
+                </tr>
+                <tr>
+                  <td>التحويل من بنك لآخر داخل المملكة عبر النظام السعودي</td>
+                  <td>7 ريال</td>
+                  <td>25 ريال</td>
+                </tr>
+                <tr>
+                  <td>التحويلات المالية السريعة (نفس اليوم)</td>
+                  <td>5 ريال</td>
+                  <td>15 ريال</td>
+                </tr>
+                <tr>
+                  <td>التحويل إلى بنك خارج المملكة</td>
+                  <td>50 ريال</td>
+                  <td>75 ريال</td>
+                </tr>
+                <tr>
+                  <td>تعديل/إلغاء حوالة خارج المملكة</td>
+                  <td>15 ريال</td>
+                  <td>25 ريال</td>
+                </tr>
+
+                <tr>
+                  <td colspan="3" class="category-header">عمليات الشبكة الخليجية</td>
+                </tr>
+                <tr>
+                  <td>السحب النقدي ببطاقات مدى داخل دول مجلس التعاون الخليجي</td>
+                  <td>10 ريال</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>استعلام عن الرصيد ببطاقات مدى داخل دول مجلس التعاون الخليجي</td>
+                  <td>3 ريال</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>استخدام بطاقة مدى عبر نقاط البيع داخل دول مجلس التعاون الخليجي</td>
+                  <td>مجاناً</td>
+                  <td>-</td>
+                </tr>
+
+                <tr>
+                  <td colspan="3" class="category-header">عمليات البطاقات الائتمانية</td>
+                </tr>
+                <tr>
+                  <td>سحب مبلغ 5000 ريال أو أقل من البطاقة الائتمانية</td>
+                  <td>75 ريال</td>
+                  <td>75 ريال</td>
+                </tr>
+                <tr>
+                  <td>سحب مبلغ أكبر من 5000 ريال من البطاقة الائتمانية</td>
+                  <td>3% بحد أقصى 300 ريال</td>
+                  <td>3% بحد أقصى 300 ريال</td>
+                </tr>
+                <tr>
+                  <td>رسوم الاعتراض الخاطئ على البطاقات الائتمانية</td>
+                  <td>50 ريال</td>
+                  <td>50 ريال</td>
+                </tr>
+                <tr>
+                  <td>استخدام البطاقات الائتمانية على نقاط البيع</td>
+                  <td>مجاناً</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>استخدام البطاقات الائتمانية لعمليات الشراء عبر الإنترنت</td>
+                  <td>مجاناً</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>الاستعلام عن الرصيد</td>
+                  <td>3.5 ريال</td>
+                  <td>-</td>
+                </tr>
+
+                <tr>
+                  <td colspan="3" class="category-header">التحويل الإلكتروني داخل المملكة</td>
+                </tr>
+                <tr>
+                  <td>للعمليات التي تعادل أو تقل عن مبلغ 2,500 ريال</td>
+                  <td>1 ريال (للعمليات ≤ 500 ريال)، 1 ريال (للعمليات &gt; 500 ولا تتجاوز 2,500)</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>للعمليات التي تتجاوز مبلغ 2,500 ريال ولا تتجاوز 20,000 ريال</td>
+                  <td>1 ريال (للعمليات ≤ 500 ريال)، 1 ريال (للعمليات &gt; 500 ولا تتجاوز 20,000)</td>
+                  <td>-</td>
+                </tr>
+
+                <tr>
+                  <td colspan="3" class="category-header">الوثائق</td>
+                </tr>
+                <tr>
+                  <td>إصدار وثيقة إثبات مديونية / إصدار وثيقة تحويل مديونية</td>
+                  <td>المرة الأولى: مجاناً</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>إصدار كشف حساب دوري أقل من سنة</td>
+                  <td>25 ريال</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>إصدار كشف حساب أكثر من سنة</td>
+                  <td>من الفرع</td>
+                  <td>-</td>
+                </tr>
+
+                <tr>
+                  <td colspan="3" class="category-header">الأمر المستديم</td>
+                </tr>
+                <tr>
+                  <td>تأسيس أمر دفع مستديم عن طريق الفرع</td>
+                  <td>15 ريال</td>
+                  <td>5 ريال</td>
+                </tr>
+                <tr>
+                  <td>إلغاء أمر مستديم</td>
+                  <td>لم يُحدد</td>
+                  <td>مجاناً</td>
+                </tr>
+
+                <tr>
+                  <td colspan="3" class="category-header">الإلكترونيات</td>
+                </tr>
+                <tr>
+                  <td>كشف حساب أقل من سنة</td>
+                  <td>مجاناً</td>
+                  <td>من الفرع</td>
+                </tr>
+                <tr>
+                  <td>كشف حساب من سنة إلى خمس سنوات</td>
+                  <td>مجاناً</td>
+                  <td>30 ريال</td>
+                </tr>
+                <tr>
+                  <td>كشف حساب أكثر من خمس سنوات</td>
+                  <td>مجاناً</td>
+                  <td>50 ريال</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="tab-comparison" class="fee-tab-panel hidden anim anim-up anim-d2">
+          <div class="nesab-section-header nesab-section-header--compact">
+            <h3 class="nesab-section-title nesab-section-title--small"><span class="gradient-text">مقارنة</span> بين الرسوم السابقة والمحدثة</h3>
+            <p class="nesab-section-subtitle">التي تتضمنها دليل تعرفة خدمات المؤسسات المالية (غير شاملة لضريبة القيمة المضافة)</p>
+          </div>
+          <div class="nesab-table-shell">
+            <table class="fees-table fees-table--comparison">
+              <thead>
+                <tr>
+                  <th>الخدمات</th>
+                  <th>الحد الأقصى السابق</th>
+                  <th>الحد الأقصى بعد التحديث</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="3" class="category-header">الرسوم الإدارية</td>
+                </tr>
+                <tr>
+                  <td>الرسوم الإدارية لمنح منتجات التمويل خلاف التمويل العقاري (بما يشمل التمويل الاستهلاكي والإيجار التمويلي للمركبات)</td>
+                  <td>1% من مبلغ التمويل أو 5,000 ريال أيهما أقل</td>
+                  <td>0.5% من مبلغ التمويل أو 2,500 ريال أيهما أقل</td>
+                </tr>
+
+                <tr>
+                  <td colspan="3" class="category-header">بطاقة مدى</td>
+                </tr>
+                <tr>
+                  <td>إعادة إصدار بطاقة مدى (مفقودة/تالفة/خطأ في الرقم السري 3 مرات)</td>
+                  <td>30 ريال</td>
+                  <td>10 ريال</td>
+                </tr>
+                <tr>
+                  <td>إصدار بطاقة مدى إضافية</td>
+                  <td>25 ريال</td>
+                  <td>لم يُحدد</td>
+                </tr>
+                <tr>
+                  <td>العمليات الشرائية الدولية</td>
+                  <td>-</td>
+                  <td>2% من مبلغ العملية</td>
+                </tr>
+                <tr>
+                  <td>السحب النقدي ببطاقات مدى دولياً – باستثناء الشبكة الخليجية</td>
+                  <td>25 ريال</td>
+                  <td>ألا تتجاوز 3% من مبلغ العملية وبحد أقصى 15 ريال</td>
+                </tr>
+                <tr>
+                  <td>الاعتراض الخاطئ على العمليات أو كشف الحساب</td>
+                  <td>-</td>
+                  <td>15 ريال</td>
+                </tr>
+
+                <tr>
+                  <td colspan="3" class="category-header">الشيكات</td>
+                </tr>
+                <tr>
+                  <td>إصدار دفتر شيكات إضافي (25 شيك)</td>
+                  <td>-</td>
+                  <td>-</td>
+                </tr>
+                <tr>
+                  <td>إصدار شيك مصرفي / إلغاء شيك مصرفي</td>
+                  <td>10 ريال</td>
+                  <td>5 ريال</td>
+                </tr>
+                <tr>
+                  <td>طلب نسخة شيك تاريخ صرفه خلال مدة أقل من سنة / أكثر من سنة</td>
+                  <td>10 ريال / 20 ريال</td>
+                  <td>10 ريال</td>
+                </tr>
+
+                <tr>
+                  <td colspan="3" class="category-header">الحوالات</td>
+                </tr>
+                <tr>
+                  <td>تأسيس أمر دفع مستديم عن طريق الفرع</td>
+                  <td>15 ريال</td>
+                  <td>5 ريال</td>
+                </tr>
+                <tr>
+                  <td>إلغاء أمر مستديم</td>
+                  <td>لم يُحدد</td>
+                  <td>مجاناً</td>
+                </tr>
+                <tr>
+                  <td>التحويل إلكترونياً داخل المملكة للعمليات التي تعادل أو تقل عن مبلغ 2,500 ريال</td>
+                  <td>1 ريال (للعمليات ≤ 500 ريال) / 1 ريال (500 إلى 2,500)</td>
+                  <td>0.5 ريال (للعمليات ≤ 2,500 ريال)</td>
+                </tr>
+                <tr>
+                  <td>التحويل إلكترونياً داخل المملكة للعمليات التي تتجاوز مبلغ 2,500 ريال ولا تتجاوز 20,000 ريال</td>
+                  <td>1 ريال (≤ 500 ريال) / 1 ريال (500 إلى 20,000)</td>
+                  <td>1 ريال</td>
+                </tr>
+                <tr>
+                  <td>إصدار وثيقة إثبات مديونية / إصدار وثيقة تحويل مديونية</td>
+                  <td>المرة الأولى: مجاناً</td>
+                  <td>مجاناً</td>
+                </tr>
+                <tr>
+                  <td>إصدار كشف حساب دوري أقل من سنة</td>
+                  <td>25 ريال</td>
+                  <td>مجاناً</td>
+                </tr>
+                <tr>
+                  <td>إصدار كشف حساب أكثر من سنة</td>
+                  <td>من الفرع</td>
+                  <td>مجاناً</td>
+                </tr>
+
+                <tr>
+                  <td colspan="3" class="category-header">الإلكترونيات</td>
+                </tr>
+                <tr>
+                  <td>كشف حساب أقل من سنة</td>
+                  <td>25 ريال</td>
+                  <td>مجاناً</td>
+                </tr>
+                <tr>
+                  <td>كشف حساب من سنة إلى خمس سنوات</td>
+                  <td>30 ريال</td>
+                  <td>مجاناً</td>
+                </tr>
+                <tr>
+                  <td>كشف حساب أكثر من خمس سنوات</td>
+                  <td>50 ريال</td>
+                  <td>مجاناً</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="nesab-section-subtitle nesab-section-note">* تدخل التعليمات أعلاه حيز التنفيذ خلال (60) يوماً من تاريخ نشرها. المصدر: البنك المركزي السعودي (ساما)</p>
+        </div>
+      </section>
+
+      <section id="tools" class="nesab-section">
+        <div class="nesab-section-header">
+          <h2 class="nesab-section-title anim anim-up">الأدوات <span style="color:#fff">السريعة</span></h2>
+          <p class="nesab-section-subtitle anim anim-up anim-d1">أدوات عملية سريعة للاستخدام اليومي داخل الصفحة الرئيسية.</p>
+        </div>
+
+        <div class="nesab-tools-grid">
+          <div class="nesab-tool-card anim anim-up anim-d1">
+            <h3 class="nesab-tool-title">حاسبة العمر</h3>
+            <form id="age-calc-form" class="nesab-form">
+              <label for="birth-date">تاريخ الميلاد</label>
+              <input type="date" id="birth-date" class="nesab-input" required>
+              <button type="submit" class="nesab-button">احسب العمر</button>
+            </form>
+            <div id="age-result"></div>
+          </div>
+
+          <div class="nesab-tool-card anim anim-up anim-d2">
+            <h3 class="nesab-tool-title">تحويل التاريخ</h3>
+            <form id="date-convert-form" class="nesab-form">
+              <label for="convert-direction">اتجاه التحويل</label>
+              <select id="convert-direction" class="nesab-select">
+                <option value="to-hijri">ميلادي إلى هجري</option>
+                <option value="to-greg">هجري إلى ميلادي</option>
+              </select>
+              <div id="gregorian-fields" class="nesab-form-group">
+                <label for="convert-date">التاريخ الميلادي</label>
+                <input type="date" id="convert-date" class="nesab-input" required>
+              </div>
+              <div id="hijri-fields" class="nesab-inline-fields hidden" aria-hidden="true">
+                <div class="nesab-inline-field">
+                  <label for="hijri-day">اليوم الهجري</label>
+                  <input type="number" id="hijri-day" class="nesab-input" min="1" max="30" inputmode="numeric">
+                </div>
+                <div class="nesab-inline-field">
+                  <label for="hijri-month">الشهر الهجري</label>
+                  <input type="number" id="hijri-month" class="nesab-input" min="1" max="12" inputmode="numeric">
+                </div>
+                <div class="nesab-inline-field">
+                  <label for="hijri-year">السنة الهجرية</label>
+                  <input type="number" id="hijri-year" class="nesab-input" min="1300" max="1700" inputmode="numeric">
+                </div>
+              </div>
+              <button type="submit" class="nesab-button">حوّل التاريخ</button>
+            </form>
+            <div id="date-result"></div>
+          </div>
+
+          <div class="nesab-tool-card anim anim-up anim-d3">
+            <h3 class="nesab-tool-title">حاسبة نسبة الاستقطاع</h3>
+            <form id="deduct-calc-form" class="nesab-form">
+              <label for="salary-input">الراتب (ريال)</label>
+              <input type="number" id="salary-input" class="nesab-input" placeholder="مثال: 10000" required>
+              <label for="installment-input">القسط الشهري (ريال)</label>
+              <input type="number" id="installment-input" class="nesab-input" placeholder="مثال: 3000" required>
+              <button type="submit" class="nesab-button">احسب النسبة</button>
+            </form>
+            <div id="deduct-result"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+   
+
+    <section class="nesab-feature-video" aria-label="فيديو تعريفي للتطبيق">
+      <div class="layout-shell nesab-feature-video-shell">
+        <div class="nesab-feature-video-copy anim anim-up">
+          <p class="nesab-kicker">جولة سريعة</p>
+          <h2 class="nesab-heading">شاهد التجربة داخل نِسب كما تظهر للمستخدم.</h2>
+          <p class="nesab-copy-lead">فيديو محلي بعرض شبه كامل للشاشة، يعمل تلقائياً بخلفية مستقلة قبل الوصول إلى التذييل.</p>
+        </div>
+      </div>
+      <div class="nesab-feature-video-frame anim anim-up anim-d1">
+        <video class="nesab-feature-video-media" autoplay muted loop playsinline preload="metadata">
+          <source src="assets/vedio.mp4" type="video/mp4">
+        </video>
+      </div>
+    </section>
+  </main>
+
+  <footer class="nesab-footer">
+    <div class="layout-shell nesab-footer-inner">
+      <div class="nesab-footer-grid">
+        <div class="nesab-footer-col">
+          <a class="nesab-brand nesab-brand--footer" href="#home">
+            <img id="footer-brand-logo" class="nesab-brand-logo" src="assets/header_logo_light.png" alt="NESAB" width="150" height="50" style="height:50px;width:auto;max-height:50px;max-width:170px;display:block;">
+          </a>
+          <p class="nesab-footer-copy">"نِسب" ليس مجرد تطبيق حسابي، بل هو شريكك في الميدان يمنحك السرعة والدقة لخدمة عملائك بثقة.</p>
+          <div class="nesab-store-actions nesab-store-actions--footer" aria-label="تحميل التطبيق من المتاجر">
+            <a class="nesab-store-link nesab-store-link--footer" href="https://play.google.com/store/search?q=NESAB&amp;c=apps" target="_blank" rel="noopener noreferrer">
+              <img class="nesab-store-art" src="assets/store-google.png" alt="Google Play">
+            </a>
+            <a class="nesab-store-link nesab-store-link--footer" href="https://apps.apple.com/sa/search?term=NESAB" target="_blank" rel="noopener noreferrer">
+              <img class="nesab-store-art" src="assets/store-apple.png" alt="App Store">
+            </a>
+          </div>
+        </div>
+        <div class="nesab-footer-col">
+          <h4 class="nesab-footer-heading">تواصل معنا</h4>
+          <p>المملكة العربية السعودية</p>
+          <p><a href="mailto:info@nesab.sa" class="nesab-footer-link">Info@nesab.sa</a></p>
+          <div class="ftr-icons" style="display:flex;flex-wrap:wrap;margin-top:12px;">
+            <a href="https://wa.me/966500768074" target="_blank" rel="noopener noreferrer" title="واتساب" class="ftr-icon ftr-icon--wa" style="display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;min-width:38px;border-radius:50%;background:#25d366;text-decoration:none;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true" style="display:block;"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            </a>
+            <a href="https://x.com/Banker_Vp" target="_blank" rel="noopener noreferrer" title="منصة اكس" class="ftr-icon ftr-icon--x" style="display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;min-width:38px;border-radius:50%;background:#000000;border:1px solid rgba(255,255,255,0.2);text-decoration:none;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true" style="display:block;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.259 5.631 5.905-5.631zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="https://t.me/Nesab.sa" target="_blank" rel="noopener noreferrer" title="تليجرام" class="ftr-icon ftr-icon--tg" style="display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;min-width:38px;border-radius:50%;background:#0088cc;text-decoration:none;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true" style="display:block;"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="nesab-footer-col">
+          <h4 class="nesab-footer-heading">روابط سريعة</h4>
+          <a href="#home" class="nesab-footer-link">الرئيسية</a>
+          <a href="#about" class="nesab-footer-link">عن التطبيق</a>
+          <a href="#features" class="nesab-footer-link">المميزات</a>
+          <a href="#fees" class="nesab-footer-link">الرسوم البنكية</a>
+          <a href="#tools" class="nesab-footer-link">الأدوات السريعة</a>
+          <a href="/privacy" class="nesab-footer-link">الخصوصية</a>
+          <a href="/terms-of-use.html" class="nesab-footer-link">شروط الاستخدام</a>
+        </div>
+        <div class="nesab-footer-col">
+          <div class="ftr-dev-card">
+            <h4 class="ftr-dev-card-title">عن المؤسس</h4>
+            <p class="ftr-dev-card-bio">قائد في الخدمات المالية والتحول الرقمي، ومستشار ائتماني معتمد، بخبرة مصرفية تمتد لأكثر من 19 عامًا، تدرج خلالها في المناصب القيادية حتى إدارة الفروع. يركز على الابتكار المصرفي والتقنية المالية وتوظيف الذكاء الاصطناعي لتطوير الخدمات المالية وبناء حلول أكثر كفاءة وقابلة للتوسع، بما يعزز النمو ويرتقي بتجربة العملاء.</p>
+            <div class="ftr-dev-links">
+              <a href="https://www.linkedin.com/in/abdullah-almalkiii" target="_blank" rel="noopener noreferrer" title="لينكدإن" class="ftr-icon ftr-icon--li">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true" style="display:block;"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+              <a href="mailto:abdullahalmalki@nesab.sa" title="البريد الإلكتروني" class="ftr-icon ftr-icon--mail">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true" style="display:block;"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nesab-footer-bottom">
+        <p>جميع الحقوق محفوظة © 2026 Nesab</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/nav.js" defer></script>
+  <script src="js/tools.js" defer></script>
+  <script src="js/animations.js" defer></script>
+</body>
+</html>
