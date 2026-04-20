@@ -6,6 +6,14 @@
 (function () {
   "use strict";
 
+  // ─── SELF-LOAD READEX PRO FONT ───
+  if (!document.querySelector('link[href*="Readex+Pro"]')) {
+    const _rp = document.createElement("link");
+    _rp.rel  = "stylesheet";
+    _rp.href = "https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&display=swap";
+    document.head.appendChild(_rp);
+  }
+
   const ICON_SRC = "/technical-support.png";
   const STORAGE_KEY = "nesab_ai_position";
   const HAS_SAVED_POSITION = "nesab_ai_has_saved_position";
