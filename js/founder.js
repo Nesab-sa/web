@@ -31,7 +31,7 @@
   var FOUNDER = {
     name:            { en: 'Abdullah Almalki', ar: 'عبدالله المالكي' },
     slug:            'abdullah-almalki',
-    role:            { en: 'Founder of Nesab', ar: 'مؤسس نِسب' },
+    role:            { en: 'Founder of Nesab', ar: 'مؤسس نِسَب' },
     yearsExperience: 19,
 
     contact: {
@@ -51,19 +51,19 @@
       },
       short: {
         en: 'Abdullah Almalki is the Founder of Nesab, a fintech builder, and a financial services leader with 19+ years of banking experience focused on AI-enabled financial innovation.',
-        ar: 'عبدالله المالكي مؤسس نِسب، وقائد في الخدمات المالية بخبرة مصرفية تتجاوز 19 عامًا، يركز على الابتكار المالي المدعوم بالذكاء الاصطناعي.'
+        ar: 'عبدالله المالكي مؤسس نِسَب، وقائد في الخدمات المالية بخبرة مصرفية تتجاوز 19 عامًا، يركز على الابتكار المالي المدعوم بالذكاء الاصطناعي.'
       },
       medium: {
         en: 'Abdullah Almalki is the Founder of Nesab and a financial services leader with 19+ years of banking experience. His background spans credit, branch leadership, customer journeys, and operational performance. He now focuses on building AI-enabled financial products and scalable fintech solutions that simplify and improve access to financial services.',
-        ar: 'عبدالله المالكي مؤسس نِسب وقائد في الخدمات المالية بخبرة مصرفية تمتد لأكثر من 19 عامًا. تشمل خلفيته الائتمان وإدارة الفروع ورحلات العملاء والأداء التشغيلي. يركز حالياً على بناء منتجات مالية مدعومة بالذكاء الاصطناعي وحلول فينتك قابلة للتوسع.'
+        ar: 'عبدالله المالكي مؤسس نِسَب وقائد في الخدمات المالية بخبرة مصرفية تمتد لأكثر من 19 عامًا. تشمل خلفيته الائتمان وإدارة الفروع ورحلات العملاء والأداء التشغيلي. يركز حالياً على بناء منتجات مالية مدعومة بالذكاء الاصطناعي وحلول فينتك قابلة للتوسع.'
       },
       full: {
         en: 'Abdullah Almalki is the Founder of Nesab and a senior leader in financial services, banking operations, digital transformation, and applied financial technology. He brings more than 19 years of professional banking experience developed through frontline advisory roles, relationship management, branch leadership, and executive operational responsibility.\n\nHis career combines deep practical expertise in banking products, credit solutions, customer behavior, sales performance, and operational management with the ability to convert market needs into scalable digital products.\n\nHe is recognized for bridging traditional financial expertise with modern execution models, including fintech systems, automation, customer-experience design, and AI-enabled service delivery.\n\nThrough Nesab, he is building a next-generation financial platform focused on simplifying access to financial solutions, improving customer financial decisions, increasing execution efficiency, and delivering intelligent products designed for real market demand.',
-        ar: 'عبدالله المالكي مؤسس نِسب وقائد كبير في الخدمات المالية والعمليات المصرفية والتحول الرقمي وتكنولوجيا المالية التطبيقية. يمتلك أكثر من 19 عامًا من الخبرة المصرفية المهنية تطورت عبر أدوار استشارية ميدانية وإدارة علاقات وقيادة فروع ومسؤولية تشغيلية تنفيذية.'
+        ar: 'عبدالله المالكي مؤسس نِسَب وقائد كبير في الخدمات المالية والعمليات المصرفية والتحول الرقمي وتكنولوجيا المالية التطبيقية. يمتلك أكثر من 19 عامًا من الخبرة المصرفية المهنية تطورت عبر أدوار استشارية ميدانية وإدارة علاقات وقيادة فروع ومسؤولية تشغيلية تنفيذية.'
       },
       media: {
         en: 'Abdullah Almalki, Founder of Nesab, is a Saudi financial services leader and fintech entrepreneur with over 19 years of banking experience. He specializes in credit, digital transformation, and AI-powered financial products designed to modernize customer access to financial solutions.',
-        ar: 'عبدالله المالكي، مؤسس نِسب، قائد سعودي في الخدمات المالية ورائد أعمال في مجال التقنية المالية بخبرة مصرفية تتجاوز 19 عامًا. متخصص في الائتمان والتحول الرقمي والمنتجات المالية المدعومة بالذكاء الاصطناعي.'
+        ar: 'عبدالله المالكي، مؤسس نِسَب، قائد سعودي في الخدمات المالية ورائد أعمال في مجال التقنية المالية بخبرة مصرفية تتجاوز 19 عامًا. متخصص في الائتمان والتحول الرقمي والمنتجات المالية المدعومة بالذكاء الاصطناعي.'
       },
       footerAr: 'قائد في الخدمات المالية والتحول الرقمي، ومستشار ائتماني معتمد، بخبرة مصرفية تمتد لأكثر من 19 عامًا، تدرج خلالها في المناصب القيادية حتى إدارة الفروع. يركز على الابتكار المصرفي والتقنية المالية وتوظيف الذكاء الاصطناعي لتطوير الخدمات المالية وبناء حلول أكثر كفاءة وقابلة للتوسع، بما يعزز النمو ويرتقي بتجربة العملاء.'
     },

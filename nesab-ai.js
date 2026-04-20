@@ -18,7 +18,7 @@
   html +=
     '<div class="nesab-ai-hdr" id="nesabAiDragHandle"><span>Nesab AI</span><button onclick="NesabAI.toggle()" aria-label="إغلاق">✕</button></div>';
   html +=
-    '<div class="nesab-ai-chat" id="nesabAiChat"><div class="nesab-ai-msg"><span class="nesab-ai-name">نسب:</span> يــاهلا .. انا مستشارك الائتماني .. تفضل اذا عندك استفسار او سؤال</div></div>';
+    '<div class="nesab-ai-chat" id="nesabAiChat"><div class="nesab-ai-msg"><span class="nesab-ai-name">نِسَب:</span> يــاهلا .. انا مستشارك الائتماني .. تفضل اذا عندك استفسار او سؤال</div></div>';
   html +=
     '<div class="nesab-ai-inp"><input type="text" id="nesabAiQ" placeholder="اسالني..." onkeydown="if(event.key===\'Enter\')NesabAI.ask()"><button onclick="NesabAI.ask()" aria-label="إرسال">ارسال</button></div>';
   html += "</div>";
@@ -504,7 +504,7 @@
       const loadingMsg = document.createElement("div");
       loadingMsg.className = "nesab-ai-msg";
       loadingMsg.innerHTML =
-        '<span class="nesab-ai-name">نسب:</span> <span style="opacity: 0.6;">جاري المعالجة...</span>';
+        '<span class="nesab-ai-name">نِسَب:</span> <span style="opacity: 0.6;">جاري المعالجة...</span>';
       chatBox.appendChild(loadingMsg);
       chatBox.scrollTop = chatBox.scrollHeight;
 
@@ -530,7 +530,7 @@
           const data = await response.json();
           const answer = data.reply || getResponse(question); // fallback if reply field absent
           loadingMsg.innerHTML =
-            '<span class="nesab-ai-name">نسب:</span> ' + answer;
+            '<span class="nesab-ai-name">نِسَب:</span> ' + answer;
           // Accumulate this turn in session memory
           conversationHistory.push({ role: "user", content: question });
           conversationHistory.push({ role: "assistant", content: answer });
@@ -538,14 +538,14 @@
           // Fall back to local KB if API fails
           const answer = getResponse(question);
           loadingMsg.innerHTML =
-            '<span class="nesab-ai-name">نسب:</span> ' + answer;
+            '<span class="nesab-ai-name">نِسَب:</span> ' + answer;
         }
       } catch (err) {
         // Fall back to local KB if API call fails
         console.warn("API call failed, using local KB:", err);
         const answer = getResponse(question);
         loadingMsg.innerHTML =
-          '<span class="nesab-ai-name">نسب:</span> ' + answer;
+          '<span class="nesab-ai-name">نِسَب:</span> ' + answer;
       }
 
       chatBox.scrollTop = chatBox.scrollHeight;
