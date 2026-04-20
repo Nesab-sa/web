@@ -6,7 +6,7 @@
 (function () {
   "use strict";
 
-  const ICON_SRC = "./technical-support.png";
+  const ICON_SRC = "/technical-support.png";
   const STORAGE_KEY = "nesab_ai_position";
   const HAS_SAVED_POSITION = "nesab_ai_has_saved_position";
   // Phase 8 — in-session conversation memory (sent to chat.php as history param)
