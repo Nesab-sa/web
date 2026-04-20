@@ -129,7 +129,7 @@
       color: #fde68a; /* نص ذهبي للعنوان */
       font-weight: 700;
       font-size: 0.95rem;
-      font-family: 'Cairo', sans-serif;
+      font-family: 'Readex Pro', 'Segoe UI', Tahoma, Arial, sans-serif;
     }
 
     .nesab-ai-hdr button {
@@ -153,7 +153,7 @@
       background: #090a0f; /* لون الخلفية الأساسي */
       max-height: 350px;
       overflow-y: auto;
-      font-family: 'Cairo', sans-serif;
+      font-family: 'Readex Pro', 'Segoe UI', Tahoma, Arial, sans-serif;
     }
 
     /* ستايل الرسايل */
@@ -194,7 +194,7 @@
       border: 1px solid #2d313e;
       border-radius: 10px;
       color: #ffffff;
-      font-family: 'Cairo', sans-serif;
+      font-family: 'Readex Pro', 'Segoe UI', Tahoma, Arial, sans-serif;
       font-size: 0.85rem;
     }
 
@@ -210,7 +210,7 @@
       border: none;
       border-radius: 10px;
       color: #fff;
-      font-family: 'Cairo', sans-serif;
+      font-family: 'Readex Pro', 'Segoe UI', Tahoma, Arial, sans-serif;
       font-weight: 700;
       cursor: pointer;
       transition: all 0.2s;
