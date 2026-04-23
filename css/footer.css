@@ -332,6 +332,21 @@
   border-bottom: 1px solid var(--line-strong);
 }
 
+.founder-name {
+  background: linear-gradient(90deg, #c8a84b, #f0d080, #c8a84b);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  animation: founder-shimmer 3s linear infinite;
+}
+
+@keyframes founder-shimmer {
+  0%   { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
 .ftr-dev-card-bio {
   margin: 0;
   color: var(--muted);
