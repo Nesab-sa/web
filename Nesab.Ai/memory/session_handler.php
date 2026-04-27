@@ -20,7 +20,8 @@
  */
 
 define('SESSION_DIR',          __DIR__ . '/sessions');
-define('SESSION_MAX_MESSAGES', 24);   // 12 turns (user+assistant pairs)
+define('SESSION_MAX_MESSAGES', 24);        // 12 turns (user+assistant pairs)
+define('SESSION_MAX_AGE',      604800);    // 7 days in seconds
 
 
 // ── USER ID RESOLUTION ────────────────────────────────────────────────────────
@@ -59,6 +60,26 @@ function resolve_user_id(array $data): string
 function _session_path(string $userId): string
 {
     return SESSION_DIR . '/' . $userId . '.json';
+}
+
+
+// ── CLEANUP ───────────────────────────────────────────────────────────────────
+
+/**
+ * Delete session files whose filesystem mtime is older than SESSION_MAX_AGE.
+ * Uses filemtime() — no file read or JSON parse needed, reliable on shared hosting.
+ * Called probabilistically (~1% of saves) to avoid per-request FS scans.
+ */
+function cleanup_old_sessions(): void
+{
+    $cutoff = time() - SESSION_MAX_AGE;
+    $files  = glob(SESSION_DIR . '/*.json') ?: [];
+    foreach ($files as $file) {
+        $mtime = @filemtime($file);
+        if ($mtime !== false && $mtime < $cutoff) {
+            @unlink($file);
+        }
+    }
 }
 
 
@@ -156,4 +177,9 @@ function save_session(string $userId, array $newMessages): void
 
     // LOCK_EX: atomic write — prevents corruption on concurrent requests
     @file_put_contents(_session_path($userId), $json, LOCK_EX);
+
+    // Purge sessions older than SESSION_MAX_AGE on ~1% of requests
+    if (rand(1, 100) === 1) {
+        cleanup_old_sessions();
+    }
 }
