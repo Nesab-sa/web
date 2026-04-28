@@ -55,11 +55,8 @@
   }
 
   .nesab-showcase-phone {
-    position: relative;
-    left: auto;
-    right: auto;
-    bottom: auto;
-    margin: 20px auto 0;
+    position: static;
+    margin: 0;
   }
 
   .nesab-vision-figure,
@@ -69,9 +66,7 @@
   }
 
   .nesab-showcase-phone--secondary {
-    margin-top: -120px;
-    margin-right: auto;
-    margin-left: 8%;
+    margin: 0;
   }
 }
 
@@ -346,6 +341,23 @@
   /* Section titles smaller on mobile */
   .nesab-section-title {
     font-size: 1.5rem;
+    margin: 20px 0 10px;
+  }
+
+  /* Product grid on mobile */
+  #products .nesab-feature-grid,
+  #support-tools .nesab-feature-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  #products .nesab-feature-card img,
+  #support-tools .nesab-feature-card img {
+    width: 100%;
+  }
+
+  /* Showcase phones side by side on mobile */
+  .nesab-showcase {
+    gap: 12px;
   }
 
   .nesab-section-subtitle {
@@ -381,8 +393,7 @@
   }
 
   .nesab-showcase-phone--secondary {
-    margin-top: 16px;
-    margin-left: auto;
+    margin: 0;
   }
 
   .nesab-privacy-note {

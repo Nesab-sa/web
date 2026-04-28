@@ -86,16 +86,24 @@
   letter-spacing: 0;
 }
 
-.nesab-heading,
-.nesab-section-title {
+.nesab-heading {
   margin: 0;
   font-size: 2.5rem;
   line-height: 1.25;
   font-weight: 700;
 }
 
+.nesab-section-title {
+  margin: 32px 0 14px;
+  font-size: 2.5rem;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
 @supports (font-size: clamp(1px, 2vw, 3px)) {
-  .nesab-heading,
+  .nesab-heading {
+    font-size: clamp(1.875rem, 3.8vw, 3rem);
+  }
   .nesab-section-title {
     font-size: clamp(1.875rem, 3.8vw, 3rem);
   }
@@ -190,8 +198,11 @@
 }
 
 .nesab-showcase {
-  position: relative;
-  min-height: 540px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  min-height: 480px;
 }
 
 .nesab-showcase-main {
@@ -216,32 +227,28 @@
 }
 
 .nesab-showcase-phone {
-  position: absolute;
-  left: 0;
-  bottom: 2%;
-  width: 190px;
+  position: static;
+  width: 210px;
   overflow: hidden;
   border-radius: 30px;
   border: 1px solid var(--line);
   box-shadow: var(--shadow-lg);
+  flex-shrink: 0;
 }
 
 @supports (width: clamp(1px, 2vw, 3px)) {
   .nesab-showcase-phone {
-    width: clamp(170px, 19vw, 220px);
+    width: clamp(160px, 21vw, 220px);
   }
 }
 
 .nesab-showcase-phone--secondary {
-  left: auto;
-  right: 2%;
-  bottom: 12%;
-  width: 160px;
+  width: 210px;
 }
 
 @supports (width: clamp(1px, 2vw, 3px)) {
   .nesab-showcase-phone--secondary {
-    width: clamp(130px, 15vw, 176px);
+    width: clamp(160px, 21vw, 220px);
   }
 }
 
@@ -249,6 +256,7 @@
   width: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+  display: block;
 }
 
 @supports (aspect-ratio: 1 / 1) {
@@ -374,6 +382,40 @@
   display: block;
   margin-top: 8px;
   font-size: 0.875rem;
+}
+
+/* ── Product cards with images ───────────────────────── */
+#products .nesab-feature-grid,
+#support-tools .nesab-feature-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+#products .nesab-feature-card,
+#support-tools .nesab-feature-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-decoration: none;
+  color: var(--text);
+  gap: 6px;
+  padding: 8px;
+}
+
+#products .nesab-feature-card img,
+#support-tools .nesab-feature-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+#products .nesab-feature-card span,
+#support-tools .nesab-feature-card span {
+  text-align: right;
+  font-size: 0.95rem;
+  font-weight: 600;
+  width: 100%;
 }
 
 .nesab-vision-figure {
@@ -631,4 +673,45 @@
   margin: 8px 0 0;
   color: var(--muted);
   line-height: 1.8;
+}
+
+.nesab-products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.nesab-product-card {
+  display: block;
+  text-decoration: none;
+  padding: 22px;
+  border-radius: 26px;
+  border: 1px solid var(--line);
+  background: var(--card);
+  -webkit-transition: transform 0.24s ease, border-color 0.24s ease, background-color 0.24s ease;
+  transition: transform 0.24s ease, border-color 0.24s ease, background-color 0.24s ease;
+}
+
+.nesab-product-card:hover {
+  -webkit-transform: translateY(-4px);
+  transform: translateY(-4px);
+  border-color: rgba(2, 132, 199, 0.2);
+  background: var(--card-strong);
+}
+
+.nesab-product-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+}
+
+.nesab-product-card h3 {
+  margin: 16px 0 0;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--text);
 }
