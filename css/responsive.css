@@ -352,6 +352,20 @@
   /* Product grid on mobile */
   .nesab-products-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .nesab-product-card {
+    padding: 14px 12px;
+    gap: 6px;
+  }
+
+  .nesab-product-name {
+    font-size: 0.85rem;
+  }
+
+  .nesab-product-desc {
+    font-size: 0.78rem;
   }
 
   /* Showcase phones side by side on mobile */
