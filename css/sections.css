@@ -384,38 +384,72 @@
   font-size: 0.875rem;
 }
 
-/* ── Product cards with images ───────────────────────── */
-#products .nesab-feature-grid,
-#support-tools .nesab-feature-grid {
+/* ── Product cards new style ─────────────────────────── */
+.nesab-products-grid {
+  display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 8px;
 }
 
-#products .nesab-feature-card,
-#support-tools .nesab-feature-card {
+.nesab-product-card {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  gap: 10px;
+  padding: 18px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--line);
+  background: var(--card);
   text-decoration: none;
   color: var(--text);
-  gap: 6px;
-  padding: 8px;
+  transition: transform 0.24s ease, border-color 0.24s ease, background 0.24s ease;
 }
 
-#products .nesab-feature-card img,
-#support-tools .nesab-feature-card img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 10px;
-  display: block;
+.nesab-product-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(2, 132, 199, 0.3);
+  background: var(--card-strong);
 }
 
-#products .nesab-feature-card span,
-#support-tools .nesab-feature-card span {
-  text-align: right;
+.nesab-product-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--ic);
+  border: 1px solid var(--ib);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.nesab-product-icon-wrap img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.nesab-product-name {
+  margin: 0;
   font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.nesab-product-desc {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.nesab-product-cta {
+  font-size: 0.82rem;
   font-weight: 600;
-  width: 100%;
+  color: #3b82f6;
+  margin-top: 4px;
 }
 
 .nesab-vision-figure {
