@@ -16,10 +16,10 @@
   <meta name="theme-color" content="#ffffff">
 
   <!-- ── Primary SEO ───────────────────────────────────────────────────── -->
-  <title>نِسَب — حليفك الذكي في الخدمات المالية | Nesab Fintech</title>
-  <meta name="description"         content="نِسَب منصة فينتك سعودية تقدم أدوات مالية ذكية مدعومة بالذكاء الاصطناعي لمحترفي البنوك والعملاء. أسسها عبدالله المالكي بخبرة مصرفية تتجاوز 19 عامًا.">
+  <title>نِسَب — حاسبة التمويل العقاري والشخصي ونسبة الاستقطاع | Nesab Fintech</title>
+  <meta name="description"         content="نِسَب منصة فينتك سعودية تقدم أدوات مالية ذكية: حاسبة التمويل العقاري، حاسبة القرض الشخصي، نسبة الاستقطاع من الراتب، معدل النسبة السنوي APR، وجداول الأقساط. مدعومة بالذكاء الاصطناعي.">
   <meta name="author"              content="Abdullah Almalki">
-  <meta name="keywords"            content="Nesab, نِسَب, Abdullah Almalki, عبدالله المالكي, Founder of Nesab, Saudi fintech founder, Saudi banking, AI financial tools, credit calculator Saudi Arabia, فينتك سعودي, مستشار ائتماني, حاسبة استقطاع">
+  <meta name="keywords"            content="نِسَب, Nesab, حاسبة التمويل العقاري, حاسبة القرض الشخصي, نسبة الاستقطاع من الراتب, معدل النسبة السنوي, APR, حساب القسط الشهري, مبلغ التمويل, هامش الربح, جدول الأقساط, الدفعة المقدمة, مدة التمويل, أهلية التمويل, تمويل عقاري, قرض عقاري, تمويل شخصي, حاسبة مالية, فينتك سعودي, عبدالله المالكي, أدوات بنكية ذكية, حد الاستقطاع, التمويل المتاح براتبي, السداد المبكر, إعادة جدولة القرض">
   <meta name="robots"              content="index, follow">
   <link rel="canonical"            href="https://nesab.sa/">
 
@@ -27,16 +27,16 @@
   <meta property="og:type"         content="website">
   <meta property="og:url"          content="https://nesab.sa/">
   <meta property="og:site_name"    content="Nesab نِسَب">
-  <meta property="og:title"        content="نِسَب — حليفك الذكي في الخدمات المالية">
-  <meta property="og:description"  content="منصة فينتك سعودية تقدم أدوات مالية ذكية مدعومة بالذكاء الاصطناعي. أسسها عبدالله المالكي، قائد مصرفي بخبرة 19+ عامًا.">
+  <meta property="og:title"        content="نِسَب — حاسبة التمويل العقاري والشخصي ونسبة الاستقطاع">
+  <meta property="og:description"  content="أدوات مالية ذكية: حاسبة التمويل العقاري، القرض الشخصي، نسبة الاستقطاع، معدل APR، وجداول الأقساط. مدعومة بالذكاء الاصطناعي من نِسَب.">
   <meta property="og:image"        content="https://nesab.sa/assets/applogo_light.png">
   <meta property="og:locale"       content="ar_SA">
   <meta property="og:locale:alternate" content="en_US">
 
   <!-- ── Twitter Card ──────────────────────────────────────────────────── -->
   <meta name="twitter:card"        content="summary">
-  <meta name="twitter:title"       content="نِسَب — حليفك الذكي في الخدمات المالية">
-  <meta name="twitter:description" content="أدوات مالية ذكية مدعومة بالذكاء الاصطناعي من عبدالله المالكي، مؤسس نِسَب.">
+  <meta name="twitter:title"       content="نِسَب — حاسبة التمويل العقاري والشخصي ونسبة الاستقطاع">
+  <meta name="twitter:description" content="أدوات مالية ذكية: حاسبة التمويل العقاري، القرض الشخصي، نسبة الاستقطاع، معدل APR، وجداول الأقساط. مدعومة بالذكاء الاصطناعي من نِسَب.">
   <meta name="twitter:image"       content="https://nesab.sa/assets/applogo_light.png">
   <script>
     (function () {
@@ -122,6 +122,12 @@
         <a class="nesab-link" href="#fees">الرسوم البنكية</a>
         <a class="nesab-link" href="#tools">الأدوات السريعة</a>
       </div>
+
+      <!-- زر تسجيل الدخول -->
+      <button id="auth-btn" class="nesab-auth-btn" type="button" onclick="openAuthModal()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="margin-left:6px"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+        <span id="auth-btn-text">تسجيل الدخول</span>
+      </button>
 
       <button class="nesab-theme-toggle" type="button" aria-pressed="false" aria-label="تبديل المظهر">
         <svg class="nesab-theme-icon nesab-theme-icon--sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
@@ -1107,5 +1113,189 @@
   <script src="js/animations.js" defer></script>
   <script src="js/founder.js" defer></script>
 <script src="nesab-ai.js"></script>
+</body>
+</html>
+<!-- ══════════════════════════════════════════════════════════
+     AUTH MODAL
+══════════════════════════════════════════════════════════ -->
+<div id="auth-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.6);backdrop-filter:blur(4px);align-items:center;justify-content:center;">
+  <div style="background:var(--card-bg,#fff);border-radius:20px;padding:36px 28px;width:90%;max-width:400px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.3);position:relative;direction:rtl;">
+    <button onclick="closeAuthModal()" style="position:absolute;top:14px;left:14px;background:none;border:none;font-size:22px;cursor:pointer;color:var(--text-muted,#888);">✕</button>
+    <img src="assets/applogo_light.png" alt="نِسَب" style="width:60px;height:60px;border-radius:14px;margin-bottom:16px;">
+    <h2 style="font-family:'Cairo',sans-serif;font-size:20px;font-weight:700;margin-bottom:6px;color:var(--text-primary,#111);">مرحباً في نِسَب</h2>
+    <p style="font-family:'Cairo',sans-serif;font-size:14px;color:var(--text-muted,#666);margin-bottom:24px;">سجّل دخولك للوصول إلى الأدوات المالية</p>
+
+    <!-- Google -->
+    <button onclick="signInGoogle()" style="width:100%;display:flex;align-items:center;justify-content:center;gap:10px;padding:13px;border:1.5px solid #e0e0e0;border-radius:12px;background:#fff;cursor:pointer;font-family:'Cairo',sans-serif;font-size:15px;font-weight:600;color:#333;margin-bottom:12px;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 2px 12px rgba(0,0,0,0.12)'" onmouseout="this.style.boxShadow='none'">
+      <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#4285F4" d="M46.5 24.5c0-1.6-.1-3.1-.4-4.5H24v8.5h12.7c-.6 3-2.3 5.5-4.8 7.2v6h7.8c4.6-4.2 7.3-10.4 7.3-17.2z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.8-6c-2.1 1.4-4.9 2.3-8.1 2.3-6.2 0-11.5-4.2-13.4-9.9H2.6v6.2C6.6 42.7 14.7 48 24 48z"/><path fill="#FBBC05" d="M10.6 28.6c-.5-1.4-.8-2.9-.8-4.6s.3-3.2.8-4.6v-6.2H2.6C.9 16.6 0 20.2 0 24s.9 7.4 2.6 10.8l8-6.2z"/><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.5l6.7-6.7C35.9 2.5 30.5 0 24 0 14.7 0 6.6 5.3 2.6 13.2l8 6.2C12.5 13.7 17.8 9.5 24 9.5z"/></svg>
+      المتابعة مع Google
+    </button>
+
+    <!-- Apple -->
+    <button onclick="signInApple()" style="width:100%;display:flex;align-items:center;justify-content:center;gap:10px;padding:13px;border:none;border-radius:12px;background:#000;cursor:pointer;font-family:'Cairo',sans-serif;font-size:15px;font-weight:600;color:#fff;margin-bottom:12px;transition:opacity .2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'">
+      <svg width="20" height="20" viewBox="0 0 814 1000" fill="white"><path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 405.8 30 319.3 30 234.6c0-144.5 93.2-220.5 185-220.5 76 0 122.2 39.5 166.4 39.5 43.8 0 98.8-40.8 175.3-40.8 38.3 0 118.1 3.8 178.8 67.5zm-234.1-127.4c37.7-44.5 64.3-105.3 64.3-166.1 0-9-1.3-18-2.6-27-60.8 2.6-134.2 40.2-178.4 89.6-33.4 37.7-66 99.9-66 159.9 0 9.7 1.9 19.4 2.6 22.6 3.9.6 10.3 1.3 16.6 1.3 54.5 0 121-36.5 163.5-80.3z"/></svg>
+      المتابعة مع Apple
+    </button>
+
+    <!-- Divider -->
+    <div style="display:flex;align-items:center;gap:10px;margin:6px 0 16px;">
+      <div style="flex:1;height:1px;background:#e0e0e0;"></div>
+      <span style="font-family:'Cairo',sans-serif;font-size:13px;color:#aaa;">أو</span>
+      <div style="flex:1;height:1px;background:#e0e0e0;"></div>
+    </div>
+
+    <!-- Email -->
+    <div id="email-form" style="text-align:right;">
+      <input id="auth-email" type="email" placeholder="البريد الإلكتروني" style="width:100%;padding:12px 14px;border:1.5px solid #e0e0e0;border-radius:12px;font-family:'Cairo',sans-serif;font-size:14px;margin-bottom:10px;box-sizing:border-box;outline:none;direction:rtl;">
+      <input id="auth-password" type="password" placeholder="كلمة المرور" style="width:100%;padding:12px 14px;border:1.5px solid #e0e0e0;border-radius:12px;font-family:'Cairo',sans-serif;font-size:14px;margin-bottom:14px;box-sizing:border-box;outline:none;direction:rtl;">
+      <button onclick="signInEmail()" style="width:100%;padding:13px;border:none;border-radius:12px;background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;font-family:'Cairo',sans-serif;font-size:15px;font-weight:700;cursor:pointer;margin-bottom:10px;">دخول</button>
+      <button onclick="registerEmail()" style="width:100%;padding:11px;border:1.5px solid #2563eb;border-radius:12px;background:transparent;color:#2563eb;font-family:'Cairo',sans-serif;font-size:14px;font-weight:600;cursor:pointer;">إنشاء حساب جديد</button>
+    </div>
+
+    <p id="auth-error" style="color:#e53e3e;font-family:'Cairo',sans-serif;font-size:13px;margin-top:12px;display:none;"></p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     AUTH STYLES
+══════════════════════════════════════════════════════════ -->
+<style>
+  .nesab-auth-btn {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1.5px solid var(--accent, #2563eb);
+    background: transparent;
+    color: var(--accent, #2563eb);
+    font-family: 'Cairo', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .2s, color .2s;
+    white-space: nowrap;
+  }
+  .nesab-auth-btn:hover {
+    background: var(--accent, #2563eb);
+    color: #fff;
+  }
+  #auth-modal.open {
+    display: flex !important;
+  }
+</style>
+
+<!-- ══════════════════════════════════════════════════════════
+     FIREBASE SDK
+══════════════════════════════════════════════════════════ -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getAuth, onAuthStateChanged, signInWithPopup, GoogleAuthProvider, OAuthProvider, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyA4lkLR9bumW1Jb7FmmZgN5Ry3qZHC5_dE",
+    authDomain: "nesab-26771.firebaseapp.com",
+    projectId: "nesab-26771",
+    storageBucket: "nesab-26771.firebasestorage.app",
+    messagingSenderId: "1007875215696",
+    appId: "1:1007875215696:web:8729e8307c771468a01c55",
+    measurementId: "G-L81HD2W2M6"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  let pendingUrl = null;
+
+  // تحديث زر الناف
+  onAuthStateChanged(auth, (user) => {
+    const btn = document.getElementById('auth-btn');
+    const btnText = document.getElementById('auth-btn-text');
+    if (user) {
+      btnText.textContent = user.displayName ? user.displayName.split(' ')[0] : 'حسابي';
+      btn.title = 'تسجيل الخروج';
+      btn.onclick = () => { signOut(auth); };
+    } else {
+      btnText.textContent = 'تسجيل الدخول';
+      btn.onclick = () => openAuthModal();
+    }
+  });
+
+  // اعتراض كلك كروت الأدوات
+  document.querySelectorAll('.nesab-product-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (!auth.currentUser) {
+        e.preventDefault();
+        pendingUrl = card.href;
+        openAuthModal();
+      }
+    });
+  });
+
+  // Google
+  window.signInGoogle = async () => {
+    try {
+      const provider = new GoogleAuthProvider();
+      await signInWithPopup(auth, provider);
+      closeAuthModal();
+      if (pendingUrl) { window.open(pendingUrl, '_blank'); pendingUrl = null; }
+    } catch(e) { showError('فشل تسجيل الدخول بـ Google'); }
+  };
+
+  // Apple
+  window.signInApple = async () => {
+    try {
+      const provider = new OAuthProvider('apple.com');
+      provider.addScope('email');
+      provider.addScope('name');
+      await signInWithPopup(auth, provider);
+      closeAuthModal();
+      if (pendingUrl) { window.open(pendingUrl, '_blank'); pendingUrl = null; }
+    } catch(e) { showError('فشل تسجيل الدخول بـ Apple'); }
+  };
+
+  // Email - دخول
+  window.signInEmail = async () => {
+    const email = document.getElementById('auth-email').value;
+    const pass = document.getElementById('auth-password').value;
+    try {
+      await signInWithEmailAndPassword(auth, email, pass);
+      closeAuthModal();
+      if (pendingUrl) { window.open(pendingUrl, '_blank'); pendingUrl = null; }
+    } catch(e) { showError('البريد أو كلمة المرور غير صحيحة'); }
+  };
+
+  // Email - تسجيل
+  window.registerEmail = async () => {
+    const email = document.getElementById('auth-email').value;
+    const pass = document.getElementById('auth-password').value;
+    if (!email || !pass) { showError('أدخل البريد وكلمة المرور'); return; }
+    try {
+      await createUserWithEmailAndPassword(auth, email, pass);
+      closeAuthModal();
+      if (pendingUrl) { window.open(pendingUrl, '_blank'); pendingUrl = null; }
+    } catch(e) { showError('تعذر إنشاء الحساب. تأكد من صحة البيانات.'); }
+  };
+
+  function showError(msg) {
+    const el = document.getElementById('auth-error');
+    el.textContent = msg;
+    el.style.display = 'block';
+  }
+</script>
+
+<script>
+  function openAuthModal() {
+    const modal = document.getElementById('auth-modal');
+    modal.style.display = 'flex';
+    document.getElementById('auth-error').style.display = 'none';
+  }
+  function closeAuthModal() {
+    document.getElementById('auth-modal').style.display = 'none';
+  }
+  // إغلاق بالضغط خارج المودال
+  document.getElementById('auth-modal').addEventListener('click', function(e) {
+    if (e.target === this) closeAuthModal();
+  });
+</script>
+
 </body>
 </html>
