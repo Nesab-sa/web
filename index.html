@@ -1119,11 +1119,11 @@
      AUTH MODAL
 ══════════════════════════════════════════════════════════ -->
 <div id="auth-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.6);backdrop-filter:blur(4px);align-items:center;justify-content:center;">
-  <div style="background:var(--card-bg,#fff);border-radius:20px;padding:36px 28px;width:90%;max-width:400px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.3);position:relative;direction:rtl;">
-    <button onclick="closeAuthModal()" style="position:absolute;top:14px;left:14px;background:none;border:none;font-size:22px;cursor:pointer;color:var(--text-muted,#888);">✕</button>
+  <div style="background:var(--bg-soft);border-radius:20px;padding:36px 28px;width:90%;max-width:400px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.4);position:relative;direction:rtl;border:1px solid var(--line-strong);">
+    <button onclick="closeAuthModal()" style="position:absolute;top:14px;left:14px;background:none;border:none;font-size:22px;cursor:pointer;color:var(--muted);">✕</button>
     <img src="assets/applogo_light.png" alt="نِسَب" style="width:60px;height:60px;border-radius:14px;margin-bottom:16px;">
-    <h2 style="font-family:'Cairo',sans-serif;font-size:20px;font-weight:700;margin-bottom:6px;color:var(--text-primary,#111);">مرحباً في نِسَب</h2>
-    <p style="font-family:'Cairo',sans-serif;font-size:14px;color:var(--text-muted,#666);margin-bottom:24px;">سجّل دخولك للوصول إلى الأدوات المالية</p>
+    <h2 style="font-family:'Cairo',sans-serif;font-size:20px;font-weight:700;margin-bottom:6px;color:var(--text);">مرحباً في نِسَب</h2>
+    <p style="font-family:'Cairo',sans-serif;font-size:14px;color:var(--muted);margin-bottom:24px;">سجّل دخولك للوصول إلى الأدوات المالية</p>
 
     <!-- Google -->
     <button onclick="signInGoogle()" style="width:100%;display:flex;align-items:center;justify-content:center;gap:10px;padding:13px;border:1.5px solid #e0e0e0;border-radius:12px;background:#fff;cursor:pointer;font-family:'Cairo',sans-serif;font-size:15px;font-weight:600;color:#333;margin-bottom:12px;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 2px 12px rgba(0,0,0,0.12)'" onmouseout="this.style.boxShadow='none'">
@@ -1139,15 +1139,15 @@
 
     <!-- Divider -->
     <div style="display:flex;align-items:center;gap:10px;margin:6px 0 16px;">
-      <div style="flex:1;height:1px;background:#e0e0e0;"></div>
-      <span style="font-family:'Cairo',sans-serif;font-size:13px;color:#aaa;">أو</span>
-      <div style="flex:1;height:1px;background:#e0e0e0;"></div>
+      <div style="flex:1;height:1px;background:var(--line-strong);"></div>
+      <span style="font-family:'Cairo',sans-serif;font-size:13px;color:var(--muted-soft);">أو</span>
+      <div style="flex:1;height:1px;background:var(--line-strong);"></div>
     </div>
 
     <!-- Email -->
     <div id="email-form" style="text-align:right;">
-      <input id="auth-email" type="email" placeholder="البريد الإلكتروني" style="width:100%;padding:12px 14px;border:1.5px solid #e0e0e0;border-radius:12px;font-family:'Cairo',sans-serif;font-size:14px;margin-bottom:10px;box-sizing:border-box;outline:none;direction:rtl;">
-      <input id="auth-password" type="password" placeholder="كلمة المرور" style="width:100%;padding:12px 14px;border:1.5px solid #e0e0e0;border-radius:12px;font-family:'Cairo',sans-serif;font-size:14px;margin-bottom:14px;box-sizing:border-box;outline:none;direction:rtl;">
+      <input id="auth-email" type="email" placeholder="البريد الإلكتروني" style="width:100%;padding:12px 14px;border:1.5px solid var(--line-strong);border-radius:12px;font-family:'Cairo',sans-serif;font-size:14px;margin-bottom:10px;box-sizing:border-box;outline:none;direction:rtl;background:var(--bg);color:var(--text);">
+      <input id="auth-password" type="password" placeholder="كلمة المرور" style="width:100%;padding:12px 14px;border:1.5px solid var(--line-strong);border-radius:12px;font-family:'Cairo',sans-serif;font-size:14px;margin-bottom:14px;box-sizing:border-box;outline:none;direction:rtl;background:var(--bg);color:var(--text);">
       <button onclick="signInEmail()" style="width:100%;padding:13px;border:none;border-radius:12px;background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;font-family:'Cairo',sans-serif;font-size:15px;font-weight:700;cursor:pointer;margin-bottom:10px;">دخول</button>
       <button onclick="registerEmail()" style="width:100%;padding:11px;border:1.5px solid #2563eb;border-radius:12px;background:transparent;color:#2563eb;font-family:'Cairo',sans-serif;font-size:14px;font-weight:600;cursor:pointer;">إنشاء حساب جديد</button>
     </div>
@@ -1165,9 +1165,9 @@
     align-items: center;
     padding: 8px 16px;
     border-radius: 20px;
-    border: 1.5px solid var(--accent, #2563eb);
+    border: 1.5px solid var(--line-strong);
     background: transparent;
-    color: var(--accent, #2563eb);
+    color: var(--muted);
     font-family: 'Cairo', sans-serif;
     font-size: 14px;
     font-weight: 600;
@@ -1176,8 +1176,8 @@
     white-space: nowrap;
   }
   .nesab-auth-btn:hover {
-    background: var(--accent, #2563eb);
-    color: #fff;
+    background: var(--nav-link-bg);
+    color: var(--text);
   }
   #auth-modal.open {
     display: flex !important;
