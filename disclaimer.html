@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon.png" />
+    <title>إخلاء المسؤولية — نِسَب</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --bg: #090a0f;
+        --card: #12141d;
+        --card2: #1a1d29;
+        --border: #242731;
+        --border2: #2d313e;
+        --neon2: #5d5fef;
+        --gold: #fde68a;
+        --green: #00d68f;
+        --text: #ffffff;
+        --muted: #8e929d;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      img { max-width: 100%; height: auto; }
+      body {
+        font-family: "Cairo", sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        min-height: 100vh;
+        direction: rtl;
+        overflow-x: hidden;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background:
+          radial-gradient(circle at 20% 10%, rgba(93,95,239,0.08) 0%, transparent 40%),
+          radial-gradient(circle at 80% 90%, rgba(168,85,247,0.06) 0%, transparent 50%),
+          radial-gradient(circle at 50% 50%, transparent 0%, #090a0f 100%);
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      /* Header */
+      .hdr {
+        border-bottom: 1px solid var(--border);
+        padding: 24px;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+      a.logo { display: inline-flex; width: fit-content; max-width: 100%; }
+      .logo img {
+        width: 150px;
+        height: auto;
+        object-fit: contain;
+        display: block;
+        mix-blend-mode: screen;
+      }
+      @media (max-width: 767px) { .logo img { width: 120px; } }
+
+      /* Main */
+      .main {
+        max-width: 780px;
+        margin: 0 auto;
+        padding: 32px 16px 80px;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Page title */
+      .page-title {
+        font-size: clamp(1.4rem, 3vw, 2rem);
+        font-weight: 900;
+        color: var(--gold);
+        text-align: center;
+        margin-bottom: 8px;
+        letter-spacing: 1px;
+      }
+      .page-subtitle {
+        text-align: center;
+        font-size: 0.82rem;
+        color: var(--muted);
+        margin-bottom: 32px;
+      }
+
+      /* Section cards */
+      .disc-section {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 20px 22px;
+        margin-bottom: 14px;
+        position: relative;
+        overflow: hidden;
+      }
+      .disc-section::before {
+        content: "";
+        position: absolute;
+        top: 0; right: 0;
+        width: 120px; height: 2px;
+        background: linear-gradient(90deg, transparent, var(--gold));
+      }
+      .disc-section h2 {
+        font-size: 0.92rem;
+        font-weight: 700;
+        color: var(--gold);
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .disc-section h2::before {
+        content: "";
+        width: 4px;
+        height: 16px;
+        background: var(--gold);
+        border-radius: 4px;
+        flex-shrink: 0;
+      }
+      .disc-section p {
+        font-size: 0.84rem;
+        color: #cdd0d8;
+        line-height: 1.85;
+      }
+
+      /* Warning box */
+      .warn-box {
+        background: rgba(226,176,74,0.08);
+        border: 1px solid rgba(226,176,74,0.35);
+        border-radius: 12px;
+        padding: 16px 20px;
+        margin-bottom: 28px;
+        text-align: center;
+        font-size: 0.82rem;
+        color: var(--gold);
+        line-height: 1.7;
+      }
+
+      /* Back link */
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        color: var(--neon2);
+        text-decoration: none;
+        font-size: 0.82rem;
+        font-weight: 700;
+        margin-bottom: 24px;
+        transition: opacity 0.2s;
+      }
+      .back-link:hover { opacity: 0.75; }
+
+      /* Disclaimer bar */
+      .nesab-disclaimer-bar {
+        background: var(--card2);
+        border-top: 1px solid rgba(226,176,74,0.4);
+        padding: 10px 20px;
+        text-align: center;
+        font-size: 12px;
+        color: var(--muted);
+        direction: rtl;
+        position: relative;
+        z-index: 1;
+      }
+      .nesab-disclaimer-bar a {
+        color: var(--gold);
+        text-decoration: underline;
+        margin-right: 8px;
+      }
+
+      /* Footer */
+      .footer {
+        text-align: center;
+        padding: 20px;
+        font-size: 1.44rem;
+        color: #ffff;
+        position: relative;
+        z-index: 1;
+      }
+      .ftr-r {
+        font-size: 0.63rem;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hdr">
+      <a href="/" class="logo" aria-label="Nesab">
+        <img src="assets-logo/dar-2.svg" alt="Nesab Logo" loading="eager">
+      </a>
+    </div>
+
+    <div class="main">
+      <a href="/" class="back-link">&#8594; العودة للرئيسية</a>
+
+      <div class="page-title">إخلاء المسؤولية</div>
+      <div class="page-subtitle">يُرجى قراءة هذا الإخلاء بعناية قبل استخدام خدمات موقع نِسَب</div>
+
+      <div class="warn-box">
+        ⚠️ جميع النتائج تقريبية لأغراض توعوية فقط — لا تُشكّل نصيحة مالية أو قانونية مهنية
+      </div>
+
+      <div class="disc-section">
+        <h2>طبيعة الخدمة</h2>
+        <p>جميع الحسابات والنتائج والتقديرات المعروضة في موقع نسب هي لأغراض توعوية وإعلامية واسترشادية فقط، وتمثّل تقديرات تقريبية مبنية على المعلومات المدخلة من المستخدم. لا تُشكّل هذه النتائج بأي حال من الأحوال نصيحة مالية أو قانونية أو ضريبية أو مصرفية مهنية.</p>
+      </div>
+
+      <div class="disc-section">
+        <h2>التقريبية وعدم ضمان الدقة</h2>
+        <p>لا يضمن الموقع دقة أو اكتمال أي حساب أو نتيجة معروضة. قد تختلف النتائج الفعلية عن التقديرات المعروضة بسبب: اختلاف سياسات المؤسسات المالية، وتحديثات الأنظمة واللوائح، وخصوصية الحالة الفردية لكل مستخدم. يتحمل المستخدم وحده مسؤولية التحقق من جميع المدخلات والمخرجات.</p>
+      </div>
+
+      <div class="disc-section">
+        <h2>إخلاء المسؤولية عن الضرر</h2>
+        <p>لن يكون موقع نسب أو مشغّلوه مسؤولاً عن أي أضرار مباشرة أو غير مباشرة تنشأ عن: الاعتماد على نتائج الحاسبات في اتخاذ قرارات مالية أو استثمارية أو ائتمانية، أو أي خسارة مالية أو فوات فرصة من أي نوع.</p>
+      </div>
+
+      <div class="disc-section">
+        <h2>استشر المختصين</h2>
+        <p>قبل اتخاذ أي قرار مالي، يُوصى بمراجعة: مستشار مالي مرخّص من البنك المركزي السعودي (ساما)، أو شركة وساطة مرخّصة من هيئة السوق المالية (CMA).</p>
+      </div>
+
+      <div class="disc-section">
+        <h2>تحديث الأنظمة</h2>
+        <p>تتغير الأنظمة المالية ومعدلات الرسوم بصفة دورية. لا يمكن ضمان أن تعكس الحسابات دائماً آخر التعديلات الصادرة عن ساما أو هيئة السوق المالية.</p>
+      </div>
+
+      <div class="disc-section">
+        <h2>القانون الحاكم</h2>
+        <p>يخضع استخدام هذا الموقع لأنظمة المملكة العربية السعودية النافذة، بما فيها: نظام التجارة الإلكترونية، ونظام التعاملات الإلكترونية، ونظام مكافحة جرائم المعلوماتية.</p>
+      </div>
+    </div>
+
+  <div class="footer">
+     <div class="ftr-r">
+        <h3>By Abdullah Almalki <h3>
+        <p>جميع الحقوق محفوظة &copy; 2026</p>
+      </div>
+    </div>
+
+  <div class="page-meta">
+    <div class="page-meta-site">
+      <a class="pm-url" href="https://www.nesab.sa" target="_blank" rel="noopener noreferrer">www.nesab.sa</a>
+    </div>
+    <div class="pm-row2">
+      <span class="pm-update">آخر تحديث: أبريل 2026</span>
+      <div class="pm-icons">
+        <a href="https://t.me/Nesab.sa" target="_blank" class="tg"><svg width="13" height="13" viewBox="0 0 24 24" fill="#fff"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+        <a href="https://twitter.com/Banker_Vp" target="_blank" class="tw"><svg width="13" height="13" viewBox="0 0 24 24" fill="#fff"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.259 5.631 5.905-5.631zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+        <a href="https://wa.me/966500768074" target="_blank" class="wa"><svg width="13" height="13" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+      </div>
+    </div>
+    <div class="pm-email"><a href="mailto:info@Nesab.sa">info@Nesab.sa</a></div>
+  </div>
+
+
+
+    <div class="nesab-disclaimer-bar">
+      ⚠️ النتائج تقريبية لأغراض توعوية فقط — لا تُشكّل نصيحة مالية أو قانونية مهنية.
+      <a href="/disclaimer">إخلاء المسؤولية الكامل</a>
+    </div>
+
+    <script>
+    (function(){
+      var a = document.querySelector('a.logo');
+      if (!a) return;
+      var p = location.pathname;
+      if (p === '/' || p === '' || p === '/index.html') {
+        a.removeAttribute('href'); a.style.cursor = 'default'; a.style.pointerEvents = 'none';
+      }
+    })();
+    </script>
+  </body>
+</html>

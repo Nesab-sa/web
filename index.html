@@ -1121,7 +1121,7 @@
 <div id="auth-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.6);backdrop-filter:blur(4px);align-items:center;justify-content:center;">
   <div style="background:var(--bg-soft);border-radius:20px;padding:36px 28px;width:90%;max-width:400px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.4);position:relative;direction:rtl;border:1px solid var(--line-strong);">
     <button onclick="closeAuthModal()" style="position:absolute;top:14px;left:14px;background:none;border:none;font-size:22px;cursor:pointer;color:var(--muted);">✕</button>
-    <img src="assets/applogo_light.png" alt="نِسَب" style="width:60px;height:60px;border-radius:14px;margin-bottom:16px;">
+    <img id="auth-modal-logo" src="assets/applogo_light.png" alt="نِسَب" style="width:60px;height:60px;border-radius:14px;margin-bottom:16px;">
     <h2 style="font-family:'Cairo',sans-serif;font-size:20px;font-weight:700;margin-bottom:6px;color:var(--text);">مرحباً في نِسَب</h2>
     <p style="font-family:'Cairo',sans-serif;font-size:14px;color:var(--muted);margin-bottom:24px;">سجّل دخولك للوصول إلى الأدوات المالية</p>
 
@@ -1153,6 +1153,43 @@
     </div>
 
     <p id="auth-error" style="color:#e53e3e;font-family:'Cairo',sans-serif;font-size:13px;margin-top:12px;display:none;"></p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     TERMS AGREEMENT MODAL
+══════════════════════════════════════════════════════════ -->
+<div id="terms-modal" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,0.7);backdrop-filter:blur(4px);align-items:center;justify-content:center;">
+  <div style="background:var(--bg-soft);border-radius:20px;padding:36px 28px;width:90%;max-width:420px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.4);position:relative;direction:rtl;border:1px solid var(--line-strong);">
+    <img id="terms-modal-logo" src="assets/applogo_light.png" alt="نِسَب" style="width:50px;height:50px;border-radius:12px;margin-bottom:14px;">
+    <h2 style="font-family:'Cairo',sans-serif;font-size:18px;font-weight:700;margin-bottom:6px;color:var(--text);">قبل المتابعة</h2>
+    <p style="font-family:'Cairo',sans-serif;font-size:13px;color:var(--muted);margin-bottom:22px;">يرجى الموافقة على الشروط والأحكام للمتابعة</p>
+
+    <!-- الخيار 1 -->
+    <label style="display:flex;align-items:center;gap:12px;padding:14px;border:1px solid var(--line-strong);border-radius:12px;margin-bottom:10px;cursor:pointer;text-align:right;">
+      <input type="checkbox" id="chk-privacy" onchange="checkTerms()" style="width:18px;height:18px;accent-color:#2563eb;cursor:pointer;flex-shrink:0;">
+      <span style="font-family:'Cairo',sans-serif;font-size:14px;color:var(--text);">أوافق على
+        <a href="privacy.html" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:600;">سياسة الخصوصية</a>
+      </span>
+    </label>
+
+    <!-- الخيار 2 -->
+    <label style="display:flex;align-items:center;gap:12px;padding:14px;border:1px solid var(--line-strong);border-radius:12px;margin-bottom:10px;cursor:pointer;text-align:right;">
+      <input type="checkbox" id="chk-terms" onchange="checkTerms()" style="width:18px;height:18px;accent-color:#2563eb;cursor:pointer;flex-shrink:0;">
+      <span style="font-family:'Cairo',sans-serif;font-size:14px;color:var(--text);">أوافق على
+        <a href="terms.html" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:600;">شروط الاستخدام</a>
+      </span>
+    </label>
+
+    <!-- الخيار 3 -->
+    <label style="display:flex;align-items:center;gap:12px;padding:14px;border:1px solid var(--line-strong);border-radius:12px;margin-bottom:22px;cursor:pointer;text-align:right;">
+      <input type="checkbox" id="chk-disclaimer" onchange="checkTerms()" style="width:18px;height:18px;accent-color:#2563eb;cursor:pointer;flex-shrink:0;">
+      <span style="font-family:'Cairo',sans-serif;font-size:14px;color:var(--text);">أوافق على
+        <a href="disclaimer.html" target="_blank" style="color:#2563eb;text-decoration:none;font-weight:600;">إخلاء المسؤولية</a>
+      </span>
+    </label>
+
+    <button id="terms-confirm-btn" onclick="confirmTerms()" disabled style="width:100%;padding:13px;border:none;border-radius:12px;background:#ccc;color:#fff;font-family:'Cairo',sans-serif;font-size:15px;font-weight:700;cursor:not-allowed;transition:background .2s;">موافق ومتابعة</button>
   </div>
 </div>
 
@@ -1230,13 +1267,23 @@
     });
   });
 
+  function afterLogin() {
+    closeAuthModal();
+    if (localStorage.getItem('nesab_terms_agreed')) {
+      if (pendingUrl) { window.open(pendingUrl, '_blank'); pendingUrl = null; }
+    } else {
+      window._pendingUrl = pendingUrl;
+      pendingUrl = null;
+      openTermsModal();
+    }
+  }
+
   // Google
   window.signInGoogle = async () => {
     try {
       const provider = new GoogleAuthProvider();
       await signInWithPopup(auth, provider);
-      closeAuthModal();
-      if (pendingUrl) { window.open(pendingUrl, '_blank'); pendingUrl = null; }
+      afterLogin();
     } catch(e) { showError('فشل تسجيل الدخول بـ Google'); }
   };
 
@@ -1247,8 +1294,7 @@
       provider.addScope('email');
       provider.addScope('name');
       await signInWithPopup(auth, provider);
-      closeAuthModal();
-      if (pendingUrl) { window.open(pendingUrl, '_blank'); pendingUrl = null; }
+      afterLogin();
     } catch(e) { showError('فشل تسجيل الدخول بـ Apple'); }
   };
 
@@ -1258,8 +1304,7 @@
     const pass = document.getElementById('auth-password').value;
     try {
       await signInWithEmailAndPassword(auth, email, pass);
-      closeAuthModal();
-      if (pendingUrl) { window.open(pendingUrl, '_blank'); pendingUrl = null; }
+      afterLogin();
     } catch(e) { showError('البريد أو كلمة المرور غير صحيحة'); }
   };
 
@@ -1270,8 +1315,7 @@
     if (!email || !pass) { showError('أدخل البريد وكلمة المرور'); return; }
     try {
       await createUserWithEmailAndPassword(auth, email, pass);
-      closeAuthModal();
-      if (pendingUrl) { window.open(pendingUrl, '_blank'); pendingUrl = null; }
+      afterLogin();
     } catch(e) { showError('تعذر إنشاء الحساب. تأكد من صحة البيانات.'); }
   };
 
@@ -1283,10 +1327,34 @@
 </script>
 
 <script>
+  function openTermsModal() {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.getElementById('terms-modal-logo').src = isDark ? 'assets/applogo_dark.png' : 'assets/applogo_light.png';
+    document.getElementById('terms-modal').style.display = 'flex';
+  }
+
+  function checkTerms() {
+    const all = document.getElementById('chk-privacy').checked &&
+                document.getElementById('chk-terms').checked &&
+                document.getElementById('chk-disclaimer').checked;
+    const btn = document.getElementById('terms-confirm-btn');
+    btn.disabled = !all;
+    btn.style.background = all ? 'linear-gradient(135deg,#2563eb,#1d4ed8)' : '#ccc';
+    btn.style.cursor = all ? 'pointer' : 'not-allowed';
+  }
+
+  function confirmTerms() {
+    localStorage.setItem('nesab_terms_agreed', '1');
+    document.getElementById('terms-modal').style.display = 'none';
+    if (window._pendingUrl) { window.open(window._pendingUrl, '_blank'); window._pendingUrl = null; }
+  }
+
   function openAuthModal() {
     const modal = document.getElementById('auth-modal');
     modal.style.display = 'flex';
     document.getElementById('auth-error').style.display = 'none';
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    document.getElementById('auth-modal-logo').src = isDark ? 'assets/applogo_dark.png' : 'assets/applogo_light.png';
   }
   function closeAuthModal() {
     document.getElementById('auth-modal').style.display = 'none';
