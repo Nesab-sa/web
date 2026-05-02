@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": ".",
+    "ignore": [
+      "firebase.json", "**/.*", "**/node_modules/**",
+      "Nesab.Ai/**", "firestore.rules"
+    ]
+  },
+  "firestore": { "rules": "firestore.rules" }
+}
