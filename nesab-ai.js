@@ -19,6 +19,7 @@
   const HAS_SAVED_POSITION = "nesab_ai_has_saved_position";
   // Phase 8 — in-session conversation memory (sent to chat.php as history param)
   let conversationHistory = [];
+  let firestoreConvId = null; // Firestore conversation ID for multi-turn tracking
 
   // ─── BUILD HTML ───
   let html = '<div class="nesab-ai-widget" id="nesabAiWidget">';
@@ -521,22 +522,26 @@
         // Extract page slug from URL (e.g. "/shakhsi-plus.html" -> "shakhsi-plus")
         const pageContext = window.location.pathname.split("/").pop().replace(/\.(html?|php)$/, "") || "";
 
-        const response = await fetch("https://api.nesab.sa/chat.php", {
+        const fetchBody = {
+            message: question,
+            context: pageContext,
+            history: conversationHistory.slice(-8),
+            source: "web",
+          };
+        if (firestoreConvId) fetchBody.conversation_id = firestoreConvId;
+
+        const response = await fetch("https://us-central1-nesab-26771.cloudfunctions.net/chat", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({
-            message: question,
-            context: pageContext,
-            history: conversationHistory.slice(-8),
-            // user_id omitted — backend resolves identity via IP fallback
-          }),
+          body: JSON.stringify(fetchBody),
         });
 
         if (response.ok) {
           const data = await response.json();
           const answer = data.reply || getResponse(question); // fallback if reply field absent
+          if (data.conversation_id) firestoreConvId = data.conversation_id; // track for multi-turn
           loadingMsg.innerHTML =
             '<span class="nesab-ai-name">نِسَب:</span> ' + answer;
           // Accumulate this turn in session memory
