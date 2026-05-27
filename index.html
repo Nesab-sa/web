@@ -1113,6 +1113,21 @@
   <script src="js/animations.js" defer></script>
   <script src="js/founder.js" defer></script>
 <script src="nesab-ai.js"></script>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-app.js";
+  import { getFirestore, doc, setDoc, increment } from "https://www.gstatic.com/firebasejs/11.8.1/firebase-firestore.js";
+  const app = initializeApp({
+    apiKey: "AIzaSyA4lkLR9bumW1Jb7FmmZgN5Ry3qZHC5_dE",
+    authDomain: "nesab-26771.firebaseapp.com",
+    projectId: "nesab-26771",
+    storageBucket: "nesab-26771.firebasestorage.app",
+    messagingSenderId: "1007875215696",
+    appId: "1:1007875215696:web:8729e8307c771468a01c55"
+  });
+  const db = getFirestore(app);
+  setDoc(doc(db, "stats", "web"), { visitCount: increment(1) }, { merge: true }).catch(() => {});
+</script>
 </body>
 </html>
 <!-- ══════════════════════════════════════════════════════════
