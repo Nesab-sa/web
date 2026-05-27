@@ -1242,6 +1242,7 @@
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
   import { getAuth, onAuthStateChanged, signInWithPopup, GoogleAuthProvider, OAuthProvider, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+  import { getFirestore, doc, setDoc, increment } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
   const firebaseConfig = {
     apiKey: "AIzaSyA4lkLR9bumW1Jb7FmmZgN5Ry3qZHC5_dE",
@@ -1255,6 +1256,7 @@
 
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
+  const db = getFirestore(app);
   let pendingUrl = null;
 
   // تحديث زر الناف
@@ -1283,6 +1285,7 @@
   });
 
   function afterLogin() {
+    setDoc(doc(db, "stats", "web"), { loginCount: increment(1) }, { merge: true }).catch(() => {});
     closeAuthModal();
     if (localStorage.getItem('nesab_terms_agreed')) {
       if (pendingUrl) { window.open(pendingUrl, '_blank'); pendingUrl = null; }
