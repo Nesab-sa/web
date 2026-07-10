@@ -19,7 +19,41 @@
   const HAS_SAVED_POSITION = "nesab_ai_has_saved_position";
   // Phase 8 — in-session conversation memory (sent to chat.php as history param)
   let conversationHistory = [];
-  let firestoreConvId = null; // Firestore conversation ID for multi-turn tracking
+
+  // Stable per-session conversation id, persisted in sessionStorage so it
+  // survives page navigation/reload within the same browsing session and
+  // resets only when the tab is closed — groups ALL turns of one session
+  // into a single Firestore document.
+  const CONV_ID_KEY = "nesab_ai_conversation_id";
+
+  function _genConvId() {
+    try {
+      if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+    } catch (e) {
+      /* fall through to manual UUID */
+    }
+    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
+      const r = (Math.random() * 16) | 0;
+      const v = c === "x" ? r : (r & 0x3) | 0x8;
+      return v.toString(16);
+    });
+  }
+
+  function _getConvId() {
+    try {
+      let id = sessionStorage.getItem(CONV_ID_KEY);
+      if (!id) {
+        id = _genConvId();
+        sessionStorage.setItem(CONV_ID_KEY, id);
+      }
+      return id;
+    } catch (e) {
+      if (!window.__nesabConvId) window.__nesabConvId = _genConvId();
+      return window.__nesabConvId;
+    }
+  }
+
+  let firestoreConvId = _getConvId(); // Firestore conversation ID for multi-turn tracking
 
   // ─── BUILD HTML ───
   let html = '<div class="nesab-ai-widget" id="nesabAiWidget">';
@@ -541,7 +575,10 @@
         if (response.ok) {
           const data = await response.json();
           const answer = data.reply || getResponse(question); // fallback if reply field absent
-          if (data.conversation_id) firestoreConvId = data.conversation_id; // track for multi-turn
+          if (data.conversation_id) {
+            firestoreConvId = data.conversation_id; // track for multi-turn
+            try { sessionStorage.setItem(CONV_ID_KEY, firestoreConvId); } catch (e) { /* keep in-memory */ }
+          }
           loadingMsg.innerHTML =
             '<span class="nesab-ai-name">نِسَب:</span> ' + answer;
           // Accumulate this turn in session memory
